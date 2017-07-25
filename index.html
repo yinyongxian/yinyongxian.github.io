@@ -18,14 +18,14 @@ a:hover{
 <br/>
 <h2 style="text-align:center;">文章</h2>
 <br/>
-<table style="width:100%;" cellpadding="2" cellspacing="0" border="1" bordercolor="#DFC5A4" align="center">
+<table style="width:100%;" cellpadding="2" cellspacing="0" border="1" bordercolor="#DFC5A4">
     <tbody>
         {% for post in site.posts %}
         <tr>
-            <td style="text-align:right;">
+            <td style="text-align:right;" "width:50%">
                 <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
             </td>
-            <td>
+            <td style="width:50%">
                 {{ post.date | date_to_string }}
             </td>
         </tr>
