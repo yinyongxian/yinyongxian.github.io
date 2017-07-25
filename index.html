@@ -17,9 +17,24 @@ yinyongxian@qq.com
     文章
 </h2>
 <br/>
+<table style="width:100%;" cellpadding="2" cellspacing="0" border="1" bordercolor="#DFC5A4">
+    <tbody>
+        {% for post in site.posts %}
+        <tr>
+            <td>
+                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            </td>
+            <td>
+                <{{ post.date | date_to_string }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 <ul>
     {% for post in site.posts %}
-    <li> <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>    {{ post.date | date_to_string("yyyy-MM-dd HH:mm:ss") }}</li>
+    <li> <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>&nbsp&nbsp&nbsp&nbsp{{ post.date | date_to_string }}</li>
     {% endfor %}
 </ul>
 
