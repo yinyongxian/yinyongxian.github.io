@@ -19,7 +19,7 @@ yinyongxian@qq.com
 <br/>
 <ul>
     {% for post in site.posts %}
-    <li> <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> {{ post.date | date_to_string }}</li>
+    <li> <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>    {{ post.date | date_to_string("yyyy-MM-dd HH:mm:ss") }}</li>
     {% endfor %}
 </ul>
 
