@@ -3,6 +3,15 @@ layout: default
 title: 尹永贤的文章
 ---
 
+<style type="text/css">
+    a:link,a:visited{
+        text-decoration:none;  /*超链接无下划线*/
+    }
+a:hover{
+    text-decoration:underline;  /*鼠标放上去有下划线*/
+}
+</style>
+
 <h1 style="text-align:center;">
 尹永贤
 </h1>
@@ -21,20 +30,14 @@ yinyongxian@qq.com
     <tbody>
         {% for post in site.posts %}
         <tr>
-            <td>
+            <td style="text-align:right;">
                 <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
             </td>
             <td>
-                <{{ post.date | date_to_string }}
+                {{ post.date | date_to_string }}
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
-
-<ul>
-    {% for post in site.posts %}
-    <li> <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>&nbsp&nbsp&nbsp&nbsp{{ post.date | date_to_string }}</li>
-    {% endfor %}
-</ul>
 
