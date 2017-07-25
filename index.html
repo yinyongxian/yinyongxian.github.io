@@ -22,10 +22,10 @@ a:hover{
     <tbody>
         {% for post in site.posts %}
         <tr>
-            <td style="text-align:right;" "width:50%">
+            <td width="50%" style="text-align:right;">
                 <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
             </td>
-            <td style="width:50%">
+            <td width="50%">
                 {{ post.date | date_to_string }}
             </td>
         </tr>
