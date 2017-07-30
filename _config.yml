@@ -1,7 +1,7 @@
 theme: jekyll-theme-cayman
 
 # 目录结构
-source:      .
+source:      yinyongxian.github.io
 destination: ./_site
 plugins:     ./_plugins
 layouts:     ./_layouts
