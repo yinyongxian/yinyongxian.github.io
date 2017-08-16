@@ -6,6 +6,7 @@ body {
 P {
 	line-height: 1.6;
 	text-indent: 2em;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
 }
 
 H1 {
