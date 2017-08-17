@@ -17,8 +17,7 @@ title: 软件削峰
 <p style="text-indent: 2em">软件很多时候要处理密集型操作，短时间内大量的操作让软件来不及响应。轻则软件很慢、卡顿、吃内存和CPU，重则软件崩溃。</p>
   <p style="text-indent: 2em">软件削峰是密集请求适当放缓，削峰填谷，尽可能减小请求峰值。</p>
 
-  <div align="center">
-  <img src="/Media/images/2017-08-02/CutTheSoftwarePeak.png" width="500" height="653" alt=""/>
+  <div align="center"> <img src="/Media/images/2017-08-02/CutTheSoftwarePeak.png" width="512" height="653" alt=""/></a>
 </div>
   <p style="text-indent: 2em">实际业务中可能会用多线程处理操作，操作包含优先级等。</p>
   <p style="text-indent: 2em">处理操作过程中不能关闭，避免业务异常；延时不能阻碍关闭请求，应立即关闭。</p>
