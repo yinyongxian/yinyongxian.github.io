@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>搜索双引号内的中文</title>
+<link href="../Media/style/2017-8-14/search-chinese-in-double-quotes.css" rel="stylesheet" type="text/css">
+<link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>搜索软件的中文</h1>
+<p>因需要将现有的中文软件的翻译成英文版，中文统一翻译。</p>
+<p>软件有多个模块，分给多个人收集软件的中文： </p>
+<ul>
+  <ul>
+    <li>人工查找，逐个打开文件并复制。</li>
+    <li> 正则表达式逐个搜索。</li>
+  </ul>
+</ul>
+<p>以上方式枯燥、繁琐、浪费时间、不能复用。</p>
+<p>分析发现软件中的中文有以下结构：</p>
+<ol>
+  <ol>
+    <li>基本都在双引号内。</li>
+    <li>双引号内不一定包含中文。&nbsp;</li>
+  </ol>
+</ol>
+<p>因此得出用正则表达式先匹配出双引号内的内容，再判断匹配的内容是否包含中文即可提取软件中的大部分中文。</p>
+<p>匹配双引号的内容的正则表达式： </p>
+<pre>"\".*?\"" </pre>
+<p>\"是转译字符"; . 是任意字符;&nbsp;* 是取0至 无限长度; ?是非贪婪模式; 总的意思是匹配以引号开始至下一个引号的内容。</p>
+<p> 匹配中文的正则表达式：</p>
+<pre>"[\u4e00-\u9fa5]"</pre>
+<p>软件写出后，一键搜索即可。</p>
+<p><a href="http://download.csdn.net/download/yinyongxian/9940784">源代码</a></p>
+</body>
+</html>
