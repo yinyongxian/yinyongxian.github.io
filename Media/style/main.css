@@ -57,12 +57,13 @@ li {
 }
 
 pre {
-    font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
-    font-size: 90%;
-    border: solid 1px lightgrey;
-    background-color: #E6E6FA;
-    padding: 5px;
-    line-height: 1.3;
+	font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
+	font-size: 90%;
+	border: solid 1px lightgrey;
+	background-color: #E6E6FA;
+	line-height: 1.3;
+	padding: 5px;
+	clip: rect(auto,auto,auto,auto);
 }
 
 
