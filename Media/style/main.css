@@ -64,6 +64,8 @@ pre {
 	line-height: 1.3;
 	padding: 5px;
 	clip: rect(auto,auto,auto,auto);
+	margin-left: 2em;
+	margin-right: 2em;
 }
 
 
