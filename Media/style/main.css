@@ -90,7 +90,6 @@ a:hover{
     text-decoration:underline;  /*鼠标放上去有下划线*/
 }
 
-
 img {
     box-shadow: 0 0 10px #555;
     border-radius: 6px;
@@ -104,10 +103,6 @@ img {
 img.displayed {
     text-align: center;
     display: block;
-}
-
-tr:hover {
-	background-color: LightGrey;
 }
 
 hr {
