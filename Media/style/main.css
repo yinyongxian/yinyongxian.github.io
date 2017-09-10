@@ -1,4 +1,4 @@
-富春江小三峡富春江小三峡body {
+body {
     font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
@@ -104,6 +104,10 @@ img {
 img.displayed {
     text-align: center;
     display: block;
+}
+
+tr:hover {
+	background-color: LightGrey;
 }
 
 hr {
