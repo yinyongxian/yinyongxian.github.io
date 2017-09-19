@@ -1,0 +1,32 @@
+---
+layout: default
+title: 搜索MySQL的中文
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>搜索MySQL的中文</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>搜索MySQL的中文</h1>
+<p>搜索MySLQ数据库里的中文以便翻译。</p>
+<p>写一个小程序读取数据，筛选出中文。</p>
+<h2>获取所有表信息</h2>
+<p>查询所有的表信息，获得所有表名。</p>
+<pre>SHOW TABLES;</pre>
+<h2>获取表结构</h2>
+<p>查询所有表结构信息，获得所有表列名。</p>
+<pre>DESC tableName;</pre>
+<h2>查询一列唯一不同的值</h2>
+<pre>SELECT DISTINCT columnName FROM tableNme;</pre>
+<h2>正则表达式匹配中文</h2>
+<p>如果字符串包含中文并且是首次匹配，则添加到结果中。 </p>
+<pre>"[\u4e00-\u9fa5]"
+</pre>
+<p>至此已获取MySQL数据库中所有不重复的中文。</p>
+</body>
+</html>

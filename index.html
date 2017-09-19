@@ -6,6 +6,7 @@ title: 人生得意须尽欢
 <!doctype html>
 <html>
 <head>
+<meta name="baidu-site-verification" content="upWYT8Xhv6" />
 <meta charset="UTF-8">
 <title>人生得意须尽欢</title> 
 <link href="Media/style/main.css" rel="stylesheet" type="text/css">
@@ -16,7 +17,8 @@ title: 人生得意须尽欢
 <table width="0" border="1" cellpadding="0" cellspacing="0" bordercolor="#EEE0E5" style="width:100%;">
     <tbody>
         {% for post in site.posts %}
-        <tr>
+        <tr onClick= "parent.location='{{ post.url }}';" onMouseOver="this.style.backgroundColor='LightGrey'"
+        onMouseOut="this.style.backgroundColor='#FFFFFF'">
             <td>
                 <a href="{{ post.url }}" >{{ post.title }}</a>
             </td>
