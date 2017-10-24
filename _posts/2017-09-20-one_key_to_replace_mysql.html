@@ -1,0 +1,30 @@
+---
+layout: default
+title: 一键替换MySQL数据库
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>一键替换MySQL数据库</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>一键替换MySQL数据库</h1>
+<p>软件开发过程中同时期开发多个版本，不同版本的数据库不一样。当调试不同的软件版本时，都要保证数据库是对应的版本。</p>
+<p>起初先卸载上一次调试的版本，再安装打算调试的版本。过程比较繁琐，浪费时间。当某版本的数据库变更时，每次都需要从版本库下载最新的安装包安装以保证数据库和代码一致。</p>
+<p>数据库用的是MySQL，MySQL支持在mysql服务时停止时，直接更换MySQL的文件，再启动mysql服务，数据库就替换完成。开启/关闭服务、文件操作是批处理最拿手的事情。
+  所以从版本库更新好各个软件版本的数据库，用以下批处理命令替换MySQL文件即可： </p>
+</body>
+<pre>net stop mysql
+
+XCOPY source destination /s /e /y
+
+net start mysql
+
+exit
+</pre>
+<p>创建各个版本数据库对应的批处理，即可一键在各个数据库之间切换，省去不少麻烦。</p>
+</html>
