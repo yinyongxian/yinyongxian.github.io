@@ -1,0 +1,87 @@
+---
+layout: default
+title: 谨慎使用C# Exception
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>谨慎使用C# Exception</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>谨慎使用C# Exception</h1>
+<p>众所周知，C# Exception是软件性能的一大杀手。一次异常没有造成太大的性能损耗，但频繁的抛出并处理异常，累加起来的损耗，就会极大地影响软件性能。</p>
+<p>软件没有好性能，在市场上就没有竞争力，很难赢得客户的满意。本文是根据我的经验，写谨慎使用C# Exception的原因和建议。</p>
+<h2>1.避免使用Exception</h2>
+<p>一些人写程序习惯用Exception，因为方法中直接抛出异常是写法很简单，不用考虑输入、输出等内容。抛出异常的写法，在调用的地方必将要使用try{…}catch (…){…}，否则软件可能直接就挂了，用户体验极差了。如果写这样的函数被频繁的调用，就会影响性能，还可能会伴随软件很久不被发现，所以能不用就不用。</p>
+<p>解决方法是书写明确的逻辑，避免抛出异常。换成参数传入传出，把抛出异常写成返回失败原因的方式，让调用者获得函数的执行的返回值、成功／失败、失败原因，减少抛出异常带来的不必要的性能损耗。</p>
+<p>曾有人写如下代码，在项目中存在长达3年以上。Foo2抛的异常自己捕获，干了一些事情，又抛到Foo1；Foo1中不仅干了类似的事情，还要捕获Foo2中的异常，并且忽略了所有异常。Foo1被多次调用，严重影响了软件性能。</p>
+<pre>public void Foo1()
+{
+    try
+    {
+        if (...)
+        {
+            //DoSomething...
+
+            Foo2();
+        }
+        else
+        {
+            throw new InvalidOperationException();
+        }
+        
+        ...
+    }
+    catch (Exception)
+    {
+        //忽略异常
+    }
+}
+
+private void Foo2()
+{
+    try
+    {
+        if (...)
+        {
+            //DoSomething...
+        }
+        else
+        {
+            throw new InvalidOperationException();
+        }
+        
+        ...
+    }
+    catch (Exception)
+    {
+        //DoSomething...
+
+        throw;
+    }
+}</pre>
+<h2>2.什么条件下使用Exception</h2>
+<p>在逻辑控制流中不要主动抛出Exception，仅在逻辑控制流中遇到非逻辑问题时再使用Exception。当你知道如何处理逻辑错误的时候，就不要再使用抛出异常的方式来解决。仅在不可避免的时候，谨慎使用Exception。</p>
+<h2>3.精雕细琢软件的写法</h2>
+<p>精雕细琢出佳品。软件也不例外，深思熟虑、反复提炼软件中的精髓，更能出佳品。基本上没有人能一气呵成写出性能极好、无Bug的软件。多多的思考比一味的写一些业务逻辑更能提高水平。精雕细琢后的软件在性能、Bug上会有不错的改善，Exception也基本可以避免了。</p>
+<h2>趣事一则</h2>
+<p>我在刚开始写软件的时候，写过如下的代码，还以为是异常的妙用，现在看起来是多么的幼稚：</p>
+<pre>...
+
+try
+{
+    //DoOneThing...
+}
+catch (Exception)
+{
+    //DoAnotherThing.
+}
+
+...</pre>
+<p>如果一个人愿意学，一个人恰好乐意教，是多么的幸运，必当事半功倍，不会走我这样的弯路。</p>
+</body>
+</html>
