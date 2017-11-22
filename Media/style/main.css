@@ -113,3 +113,8 @@ p.notice {
   color: #AA4433;
   font-size: 14px;
 }
+
+pre {
+white-space: pre-wrap;
+word-wrap: break-word;
+}
