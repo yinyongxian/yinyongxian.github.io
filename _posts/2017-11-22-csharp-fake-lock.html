@@ -1,0 +1,93 @@
+---
+layout: default
+title: C# lock内新开线程造成假锁
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>C# lock内新开线程造成假锁</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>C# lock内新开线程造成假锁</h1>
+<p>C# lock内部新开线程，新开的线程不占有lock, lock对新开的线程无效，造成假锁。</p>
+<h2>代码示例</h2>
+<pre>using System;
+using System.Collections.Generic;
+using System.Threading;
+
+namespace SynchronizeDemo
+{
+    class Program
+    {
+        private static readonly List<string> Names = new List<string>();
+        private static readonly object SyncLock = new object();
+        private const string MyName = "尹永贤";
+
+        static void Main()
+        {
+            lock (SyncLock)
+            {
+                if (!Names.Contains(MyName))
+                {
+                    AddSynchronizeName();
+                }
+            }
+
+            lock (SyncLock)
+            {
+                if (!Names.Contains(MyName))
+                {
+                    AddName();
+                }
+            }
+
+            Thread.Sleep(5000);
+
+            lock (SyncLock)
+            {
+                foreach (var name in Names)
+                {
+                    Console.WriteLine(name);
+                }
+            }
+
+            Console.ReadKey();
+        }
+
+        private static void AddName()
+        {
+            Names.Add(MyName);
+        }
+
+        private static void AddSynchronizeName()
+        {
+            /*/
+            //1.常规操作
+            Names.Add(MyName);
+            /**/
+
+            /**/
+            //2.异步操作
+            var thread = new Thread(() =>
+            {
+                Thread.Sleep(2000);
+                Names.Add(MyName);
+            })
+            { IsBackground = true };
+            thread.Start();
+            /**/
+        }
+    }
+}
+</pre>
+<ol>1.常规操作</ol>
+<img src="../Media/images/2017-11-22/result.png" width="383" height="109" alt=""/>
+<ol>2.异步操作</ol>
+<img src="../Media/images/2017-11-22/asynchronous result.png" width="383" height="109" alt=""/>
+<p>新开线程的结果和常规的结果不一样，也就失去了同步的意义。</p>
+</body>
+</html>
