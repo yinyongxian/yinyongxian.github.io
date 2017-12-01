@@ -1,0 +1,49 @@
+---
+layout: default
+title: C# dll嵌入到exe
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>C# dll嵌入到exe</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>C# dll嵌入到exe</h1>
+<p>开发中常引用一些dll，可以把Dll嵌入到exe，最终只生成一个exe文件，使用起来比较方便，避免不必要的Bug。 </p>
+<p>实现这个功能，只需要下面简单的步骤：</p>
+<h2>dll放进资源文件</h2>
+<p>把dll放进Resources.resx文件中</p>
+<img src="/Media/images/2017-12-01/Resources_resx.png" width="201" height="113" alt=""/>
+<h2>设置dll的属性</h2>
+<p>在自动生成的Resources文件夹中设置</p>
+<img src="/Media/images/2017-12-01/Property.png" width="218" height="73" alt=""/>
+<h2>主函数初始化时，添加如下内容</h2>
+<P>代码</P>
+<pre>AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
+{
+    var assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+    var resourceName = string.Format("{0}.Resources.{1}.dll", assemblyName, new AssemblyName(args.Name).Name);
+    using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
+    {
+        if (stream != null)
+        {
+            var assemblyData = new byte[stream.Length];
+            stream.Read(assemblyData, 0, assemblyData.Length);
+            return Assembly.Load(assemblyData);
+        }
+        else
+        {
+            throw new FileLoadException(resourceName);
+        }
+    }
+};
+</pre>
+<h2>结束</h2>
+<p>就是这么简单。orz</p>
+<p>dll放在其他文件夹，相同的操作也可以，放在Resources只是为了方便、统一。</p>
+</body>
+</html>
