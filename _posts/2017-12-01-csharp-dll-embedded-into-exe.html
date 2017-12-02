@@ -26,7 +26,10 @@ title: C# dll嵌入到exe
 <pre>AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
 {
     var assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
-    var resourceName = string.Format("{0}.Resources.{1}.dll", assemblyName, new AssemblyName(args.Name).Name);
+	var nameSpace = assemblyName;
+	//一般程序集名称和默认命名空间是一致的，当不一致的时候你可以用下面的方法。
+	//var nameSpace = typeof(Program).Namespace;
+	var resourceName = string.Format("{0}.Resources.{1}.dll", nameSpace, new AssemblyName(args.Name).Name);
     using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
     {
         if (stream != null)
