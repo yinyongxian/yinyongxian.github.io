@@ -1,0 +1,28 @@
+---
+layout: default
+title: 删除C#解决方案的bin和obj文件夹
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>删除C#解决方案的bin和obj文件夹</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>删除C#解决方案的bin和obj文件夹</h1>
+	<pre>var currentDirectory = Environment.CurrentDirectory;
+var parentDirectory = Directory.GetParent(currentDirectory);
+var directoryInfos = parentDirectory.GetDirectories("*", SearchOption.AllDirectories);
+var deleteDirectoryNames = new List<string>
+{
+    "bin",
+    "obj"
+};
+var deleteDirectoryInfos = directoryInfos.Where(item => deleteDirectoryNames.Contains(item.Name)).ToList();
+deleteDirectoryInfos.ForEach(item => item.Delete(true));
+	</pre>
+</body>
+</html>
