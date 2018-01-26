@@ -19,7 +19,7 @@ title: 删除C#解决方案的bin和obj文件夹
 <pre>var currentDirectory = Environment.CurrentDirectory;
 var parentDirectory = Directory.GetParent(currentDirectory);
 var directoryInfos = parentDirectory.GetDirectories("*", SearchOption.AllDirectories);
-var deleteDirectoryNames = new List&lt;string&lt;
+var deleteDirectoryNames = new List&lt;string&gt;
 {
     "bin",
     "obj"
