@@ -1,0 +1,77 @@
+---
+layout: default
+title: C# 快捷菜单ContextMenuStrip一种用法
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>C# 快捷菜单ContextMenuStrip一种用法</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>C# 快捷菜单ContextMenuStrip一种用法</h1>
+	<p>软件中常用快捷菜单ContextMenuStrip，当快捷菜单较多时，写在同一个页面，页面的业务逻辑就比较多了，因此，将快捷菜单的响应和界面分开更好。</p>
+	<h2>虚拟基类</h2>
+	<p>设置了显示文本和点击响应。可根据需要适当扩展。</p>
+	<pre>public abstract class MenuItem
+{
+    protected MenuItem(string text)
+    {
+        this.text = text;
+    }
+
+    private readonly string text;
+
+    public string Text
+    {
+        get { return text; }
+    }
+
+    public abstract void Click(params object[] args);
+}</pre>
+	<h2>子类</h2>
+	<p>子类中设置显示默认文本或者创建时指定文本。可将params传入的参数转换成具体的强类型参数，然后处理具体的业务。</p>
+	<pre>class NewMenuItem : MenuItem
+{
+    public NewMenuItem() : base("文本")
+    {
+
+    }
+
+    public NewMenuItem(string text) : base(text)
+    {
+
+    }
+
+    public override void Click(params object[] args)
+    {
+        //TODO:...
+    }
+}</pre>
+	<h2>ContextMenuStrip扩展方法</h2>
+	<p>用ContextMenuStrip的实例直接调用即可。AddNewMenuItem可传入具体的参数。</p>
+	<pre>public static class ContextMenuStripExtensions
+{
+    private static void AddMenuItem(
+        this ContextMenuStrip contextMenuStrip, 
+        MenuItem menuItem, params object[] args)
+    {
+        var item = contextMenuStrip.Items.Add(menuItem.Text);
+        item.Click += (sender, e) =>
+        {
+            menuItem.Click(args);
+        };
+    }
+
+    public static void AddNewMenuItem(this ContextMenuStrip contextMenuStrip)
+    {
+        var menuItem = new NewMenuItem();
+        contextMenuStrip.AddMenuItem(menuItem);
+    }
+}
+</pre>
+</body>
+</html>
