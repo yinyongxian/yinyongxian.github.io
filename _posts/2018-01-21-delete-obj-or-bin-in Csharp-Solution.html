@@ -26,7 +26,7 @@ var deleteDirectoryNames = new List&lt;string&gt;
 };
 var deleteDirectoryInfos = directoryInfos.Where(item => deleteDirectoryNames.Contains(item.Name)).ToList();
 deleteDirectoryInfos.ForEach(item => item.Delete(true));
-	</pre>
+</pre>
 	<p>*代码中获取父文件夹的过程，按照程序执行的位置选择要不要。</p>
 </body>
 </html>
