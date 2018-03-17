@@ -1,0 +1,38 @@
+---
+layout: default
+title: C# 获取文件MD5Hash
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>C# 获取文件MD5Hash</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+<h1>C# 获取文件MD5Hash</h1>
+<body>
+	<p>MD5常用于文件校验，避免文件在人为、软件读写、网络传输等过程中发生改变，造成异常。</p>
+	<pre>using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+
+namespace YYX
+{
+    static class Md5Helper
+    {
+        public static string GetMd5HashFromFile(string fileName)
+        {
+            using (var fileStream = new FileStream(fileName, FileMode.Open))
+            {
+                var md5 = new MD5CryptoServiceProvider();
+                var hash = md5.ComputeHash(fileStream);
+                var hexHash = string.Concat(hash.Select(item => item.ToString("X2")));
+                return hexHash;
+            }
+        }
+    }
+}
+</pre>
+</body>
+</html>
