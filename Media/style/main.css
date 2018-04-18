@@ -54,11 +54,6 @@ H4 {
     border: 1px solid LightGrey;
 }
 
-
-li {
-    margin-left: 10px;
-}
-
 pre {
 	font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
 	font-size: 90%;
@@ -112,6 +107,28 @@ p.notice {
 }
 
 pre {
-white-space: pre-wrap;
-word-wrap: break-word;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.header-left {
+	float: left;
+
+}
+
+.header-right {
+	float: right
+}
+
+.header-left, .header-right {
+	list-style-type: none
+}
+
+ul {
+	padding:0px; 
+	margin:0px;
+}
+
+li {
+	margin: 5px
 }
