@@ -140,13 +140,12 @@ li {
 table {
 	margin-left: auto;
 	margin-right: auto;
+	width: 100%;
 }
 
 
-.td-left {
-	border-width: 100%
-}
+
 
 .td-right {
-	width: auto;
+	width: 150px;
 }
