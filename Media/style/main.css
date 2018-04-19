@@ -133,3 +133,8 @@ ul {
 li {
 	margin: 5px;	
 }
+
+td {
+	width: auto;
+	white-space: nowrap;
+}
