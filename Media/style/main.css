@@ -149,3 +149,9 @@ table {
 .td-right {
 	width: 150px;
 }
+
+tr {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
