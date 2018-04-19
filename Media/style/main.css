@@ -137,5 +137,6 @@ li {
 
 
 table {
-	align-content:stretch;
+	margin-left: auto;
+	margin-right: auto;
 }
