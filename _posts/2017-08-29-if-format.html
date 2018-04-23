@@ -132,23 +132,10 @@ if (...){
     return;
 }
 </pre>
-<h2>else是否存在</h2>
-<p>else让条件condition之后代码分成两部分。明确区分代码的执行条件：.1.条件不满足时执行，.2.函数未提前退出一定执行。如果存在.1.，一定要保留else，不要让.1.和.2.合并。</p>
-<pre>void Foo(){
-    if (condition)
-    {
-        statements
-    }
-    else
-    {
-        .1.
-    }
-    
-    .2.
-}</pre>
 <h2>return</h2>
 <p>最早return。一般不用局部变量存储结果，能返回值时直接返回。不要担心return语句较多，只要不写长函数，return的数量是不会多的。</p>
-<pre>void Foo(){
+<pre>void Foo()
+{
     if (condition)
     {	
         return .1.;
