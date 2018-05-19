@@ -13,9 +13,7 @@
 	list-style-type: none
 }
 
-.td-right {
-	width: 150px;
-}
+
 
 td {
 	border-left: none;
@@ -24,4 +22,9 @@ td {
 
 .float-right {
 	float: right
+}
+
+table {
+	border-left: none;
+	border-right: none;
 }
