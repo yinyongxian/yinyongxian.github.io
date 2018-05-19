@@ -16,7 +16,6 @@
 td {
 	border-left: none;
 	border-right: none;
-	vertical-align: middle;
 }
 
 .float-right {
@@ -26,4 +25,8 @@ td {
 table {
 	border-left: none;
 	border-right: none;
+}
+
+span {
+	line-height:inherit;
 }
