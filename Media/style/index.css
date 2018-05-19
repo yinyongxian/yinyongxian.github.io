@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.header-left {
+	float: left;
+}
+
+.header-right {
+	float: right
+}
+
+.header-left, .header-right {
+	list-style-type: none
+}
+
+.td-right {
+	width: 150px;
+}
+
+td {
+	border-left: none;
+	border-right: none;
+}
+
+.float-right {
+	float: right
+}
