@@ -1,0 +1,38 @@
+---
+layout: default
+title: C# 获取控件下指定类型的控件
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>C# 获取控件下指定类型的控件</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>C# 获取控件下指定类型的控件</h1>
+	<p>获取控件组合后，统一进行处理。</p>
+	<pre>public static class ControlExtension
+{
+    public static IEnumerable&ltT&gt CollectControls&ltT&gt(this Control control)
+    {
+        var controls = control.Controls.OfType&ltT&gt();
+        foreach (var item in controls)
+        {
+            yield return item;
+        }
+
+        foreach (Control sunControl in control.Controls)
+        {
+            var resultControls = CollectControls&ltT&gt(sunControl);
+            foreach (var item in resultControls)
+            {
+                yield return item;
+            }
+        }
+    }
+}
+</pre>
+</body>
+</html>
