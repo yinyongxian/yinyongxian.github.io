@@ -23,9 +23,9 @@ title: C# 获取控件下指定类型的控件
             yield return item;
         }
 
-        foreach (Control sunControl in control.Controls)
+        foreach (Control subControl in control.Controls)
         {
-            var resultControls = CollectControls&ltT&gt(sunControl);
+            var resultControls = CollectControls&ltT&gt(subControl);
             foreach (var item in resultControls)
             {
                 yield return item;
