@@ -109,12 +109,9 @@ pre {
 	word-wrap: break-word;
 }
 
-ol {
-	margin-left: 2em;
-}
-
 ul {
-	margin-left: 2em;
+	padding:0px; 
+	margin:0px;
 }
 
 li {
