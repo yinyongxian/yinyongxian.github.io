@@ -15,7 +15,7 @@
 <script src="../Media/js/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	$("#updown").css("top", window.screen.availHeight/3-64+"px");
+	$("#updown").css("top", 300px");
 	$(window).scroll(function() {		
 		if($(window).scrollTop() >= 100){
 			$('#updown').fadeIn(300); 
@@ -28,9 +28,9 @@ $(function(){
 });
 </script>
 <style type="text/css">
-body {
+/*body {
 	height: 3000px;
-}
+}*/
 #updown {
 	position: fixed;
 	right: 10px;
