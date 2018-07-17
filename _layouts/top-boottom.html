@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery实现置顶和置底特效</title>
+<script src="../Media/js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#updown").css("top", window.screen.availHeight/3-64+"px");
+	$(window).scroll(function() {		
+		if($(window).scrollTop() >= 100){
+			$('#updown').fadeIn(300); 
+		}else{    
+			$('#updown').fadeOut(300);    
+		}  
+	});
+	$('#updown .up').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});
+	$('#updown .down').click(function(){$('html,body').animate({scrollTop:document.body.clientHeight+'px'}, 800);});
+});
+</script>
+<style type="text/css">
+body {
+	height: 3000px;
+}
+#updown {
+	position: fixed;
+	right: 10px;
+	display: none;
+}
+#updown span {
+	cursor: pointer;
+	width: 64px;
+	height: 64px;
+	display: block;
+}
+#updown .up {
+	background: url(../Media/images/top-bottom/top.png);
+	background-size: contain;
+}
+#updown .up:hover {
+	background: url(../Media/images/top-bottom/top-hover.png);
+	background-size: contain;
+}
+#updown .down {
+	background: url(../Media/images/top-bottom/bottom.png);
+	background-size: contain;
+}
+#updown .down:hover {
+	background: url(../Media/images/top-bottom/bottom-hover.png);
+	background-size: contain;
+}
+</style>
+</head>
+
+<body>
+<div id="updown"><span class="up"></span><span class="down"></span></div>
+</body>
+</html>
