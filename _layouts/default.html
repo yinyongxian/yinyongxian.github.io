@@ -1,27 +1,73 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="keywords" content="尹永贤，清流泉">
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>{{ page.title }}</title>
-        <link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
-		<link rel="apple-touch-icon" href="/Media/images/icons/YYXArticle.png">
-		<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
-		<link href="/Media/style/main.css" rel="stylesheet" type="text/css">
-		<link href="../Media/style/index.css" rel="stylesheet" type="text/css">
-		<link href="/Media/style/index.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-		<ul>
-			<li class="header-left"><a href="https://yinyongxian.github.io" >清流泉</a></li>
-			<li class="header-right"><a href="{{ site.baseurl }}/about/2017-08-02-contact.html">联系</a></li>
-			<li class="header-right"><a href="{{ site.baseurl }}/about/2017-08-05-about.html">关于</a></li>
-			<li class="header-right"><a href="{{ site.baseurl }}/about/2017-07-29-pay.html">付费</a></li>
-		</ul>
-    <br/>
-    {{ content }}
-    <br/>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="尹永贤，清流泉">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>{{ page.title }}</title>
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/Media/images/icons/YYXArticle.png">
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+<link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+<link href="../Media/style/index.css" rel="stylesheet" type="text/css">
+<link href="/Media/style/index.css" rel="stylesheet" type="text/css">
+<script src="../Media/js/jquery.min.js"></script>
+<script src="/Media/js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#updown').fadeOut(300);
+	$("#updown").css("top", window.screen.availHeight/3-64+"px");
+	$(window).scroll(function() {		
+		if($(window).scrollTop() >= 100){
+			$('#updown').fadeIn(300); 
+		}else{    
+			$('#updown').fadeOut(300);    
+		}  
+	});
+	$('#updown .up').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});
+	$('#updown .down').click(function(){$('html,body').animate({scrollTop:document.body.clientHeight+'px'}, 800);});
+});
+</script>
+<style type="text/css">
+#updown {
+	position: fixed;
+	right: 10px;
+	display: block;
+}
+#updown span {
+	cursor: pointer;
+	width: 64px;
+	height: 64px;
+	display: block;
+}
+#updown .up {
+	background: url(/Media/images/top-bottom/top.png);
+	background-size: contain;
+}
+#updown .up:hover {
+	background: url(/Media/images/top-bottom/top-hover.png);
+	background-size: contain;
+}
+#updown .down {
+	background: url(/Media/images/top-bottom/bottom.png);
+	background-size: contain;
+}
+#updown .down:hover {
+	background: url(/Media/images/top-bottom/bottom-hover.png);
+	background-size: contain;
+}
+</style>
+</head>
+<body>
+<ul>
+  <li class="header-left"><a href="https://yinyongxian.github.io" >清流泉</a></li>
+  <li class="header-right"><a href="{{ site.baseurl }}/about/2017-08-02-contact.html">联系</a></li>
+  <li class="header-right"><a href="{{ site.baseurl }}/about/2017-08-05-about.html">关于</a></li>
+  <li class="header-right"><a href="{{ site.baseurl }}/about/2017-07-29-pay.html">付费</a></li>
+</ul>
+<br>
+<div id="updown"><span class="up"></span><span class="down"></span></div>
+{{ content }}
 </body>
 </html>

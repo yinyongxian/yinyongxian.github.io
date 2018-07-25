@@ -1,0 +1,33 @@
+---
+layout: default
+title: 重命名MySQL数据库
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>重命名MySQL数据库</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>重命名MySQL数据库</h1>
+<p>有时候需要重命名数据库，方式如下：</p>
+<p>
+<ol style="padding-left:4em ">
+  <li>创建新的数据库</li>
+  <li>修改旧数据库表名称</li>
+  <li>删除旧数据库</li>
+</ol>
+</p>
+<p>获取所有MySQL数据库表名称</p>
+<pre>SELECT table_name FROM information_schema.TABLES WHERE TABLE_SCHEMA='database_name';</pre>
+<p>重命名MySQL数据库</p>
+<pre>CREATE DATABASE new_database_name;
+RENAME TABLE
+database_name.table1 TO new_database_name.table1,
+database_name.table2 TO new_database_name.table2;
+DROP DATABASE db_name;</pre>
+<p style="color: red; font: bold">数据库操作需谨慎：先备份，后操作。</p>
+</body>
+</html>
