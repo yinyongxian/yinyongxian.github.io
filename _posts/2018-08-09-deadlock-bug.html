@@ -1,0 +1,22 @@
+---
+layout: default
+title: 死锁Bug
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>死锁Bug</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>死锁Bug</h1>
+<img src="/Media/images/2018-08-09/lock.jpg" width="650" height="437" alt=""/>
+<p>程序死锁并不遥远，一不小心就发生了...</p>
+<p><b>十分惭愧</b>：自认为理解死锁、晓得死锁产生的条件、熟读相关代码（大部分还是自己写的）却未能注意到死锁的发生...</p>
+<p>死锁必有多线程、两把以上锁、获取锁的顺序有交叉...定位死锁可以按照这些必要条件缩小定位范围。</p>
+<p>因为软件死锁具有偶发性，不易复现（恰当的时间构造恰当的条件），这个Bug在软件中潜伏了一年多...</p>
+<p><b style="color: red">避免使用锁，谨慎使用锁，更要避免锁里套锁。</b></p>
+</body>
+</html>
