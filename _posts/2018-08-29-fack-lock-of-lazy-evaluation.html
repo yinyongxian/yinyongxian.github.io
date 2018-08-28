@@ -1,0 +1,106 @@
+---
+layout: default
+title: 延迟计算导致假锁
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>延迟计算导致假锁</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>延迟计算导致假锁</h1>
+<p>程序中有时会需要用到延迟计算。比如程序启动时计算尽可能少的内容可以加快启动速度等。</p>
+<p>延迟计算有好处也有坏处。好处：按需计算不集中占用资源，用到的时候才进行计算，一些没用到的内容永不计算；坏处：假如需要用到时对象计算耗时过长，程序响应就会较慢，用户体验较差。所以用不用延迟计算要根据实际情况仔细掂量，适当的优化，做到真正的削峰填谷。</p>
+<p>C#的lambada的延迟计算特性，延迟计算的代码包含在锁内，可是实际计算时却不在锁内，造成假锁。</p>
+<p>实例：
+<pre>class Program
+{
+    private static readonly List&lt;string&gt; TextList = new List&lt;string&gt;();
+    private static readonly object SyncLock = new object();
+	
+    static void Main()
+    {
+        new Thread(Add)
+        {
+            IsBackground = true
+        }.Start();
+
+        new Thread(Remove)
+        {
+            IsBackground = true
+        }.Start();
+
+        new Thread(Query)
+        {
+            IsBackground = true
+        }.Start();
+
+        Console.ReadKey();
+    }
+
+    private static void Query()
+    {
+        try
+        {
+            while (true)
+            {
+                var query = GetTexts();
+                Thread.Sleep(10);
+                var x = query.ToArray();
+                Console.WriteLine(x.Length);
+            }
+        }
+        catch (Exception e)
+        {
+            throw;
+        }
+    }
+
+    private static IEnumerable&lt;string&gt; GetTexts()
+    {
+        lock (SyncLock)
+        {
+            return TextList.Select(item =&gt; item.ToString());
+        }
+    }
+
+    private static void Add()
+    {
+        while (true)
+        {
+            lock (SyncLock)
+            {
+                if (TextList.Count &lt;= 0)
+                {
+                    TextList.AddRange(Enumerable.Range(0, 100000).Select(item =&gt; item.ToString()));
+                }
+            }
+        }
+    }
+
+    private static void Remove()
+    {
+        while (true)
+        {
+            lock (SyncLock)
+            {
+                if (TextList.Count &gt; 0)
+                {
+                    TextList.RemoveAt(0);
+                }
+            }
+        }
+    }
+}
+</pre>
+</p>
+	<p>多线程的方式对集合进行增删查，查采用lambda的延时计算。</p>
+	<p>运行上面的代码会报以下错误：
+	<img src="/Media/images/2018-08-29/collection-has-modified.png" width="660" height="424" alt="集合已被修改"/> </p>
+<p>延迟加载不应该出锁，出锁了导致这样一个错误。</p>
+	<p>由以上可知，不要在锁中使用延时计算，即使想用这种写法也要在锁内完成计算。</p>
+</body>
+</html>
