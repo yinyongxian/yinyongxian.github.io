@@ -116,6 +116,7 @@ tr {
 	text-align: right;
 	display: inline-block;
 	padding-right: 2em;
+	float: right;
 }
 #header {
 	background-color: black;
