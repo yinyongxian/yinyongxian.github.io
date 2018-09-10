@@ -130,3 +130,9 @@ tr {
 	overflow: hidden;
 	text-overflow: ellipsis
 }
+
+.datenote {
+	text-align:right;
+	display: block;
+	padding-right: 2em;
+}
