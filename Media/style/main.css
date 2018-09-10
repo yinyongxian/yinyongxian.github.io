@@ -2,21 +2,18 @@
 /* CSS Document */
 
 body {
-    font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 	margin-left: 10px;
 	margin-right: 10px;
 }
-
 P {
 	line-height: 1.6;
 	text-indent: 2em;
 }
-
 H1 {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
 	text-align: center;
 }
-
 H2 {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
 	margin-bottom: 20px;
@@ -27,8 +24,6 @@ H2 {
 	color: #666666;
 	margin-top: 20px;
 }
-
-
 H3 {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
 	border-bottom: 1px LightGrey solid;
@@ -39,24 +34,20 @@ H3 {
 	margin-bottom: 20px;
 	margin-left: 2em;
 }
-
-
 H4 {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-    margin-top: 40px;
-    margin-bottom: 30px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+	margin-top: 40px;
+	margin-bottom: 30px;
 	margin-left: 4em;
-    border-bottom: 1px LightGrey solid;
-    width: 98%;
-    line-height: 150%;
-    color: #666666;
+	border-bottom: 1px LightGrey solid;
+	width: 98%;
+	line-height: 150%;
+	color: #666666;
 }
-
 .box {
-    padding: 2% 8% 5% 8%;
-    border: 1px solid LightGrey;
+	padding: 2% 8% 5% 8%;
+	border: 1px solid LightGrey;
 }
-
 pre {
 	font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
 	font-size: 90%;
@@ -68,88 +59,75 @@ pre {
 	margin-left: 2em;
 	margin-right: 2em;
 }
-
-
 code {
-    font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
+	font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
 }
-
-a:link,a:visited{
-	text-decoration:none;  /*超链接无下划线*/
+a {
+	color: black;
 }
-
-a:hover{
+a:link, a:visited {
+	text-decoration: none;  /*超链接无下划线*/
+}
+a:hover {
 	color: LightGrey;
 }
-
 img {
 	text-align: center;
-    display: block;
-    box-shadow: 0 0 10px #555;
-    border-radius: 6px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    -webkit-box-shadow: 0 0 10px #555;
+	display: block;
+	box-shadow: 0 0 10px #555;
+	border-radius: 6px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	-webkit-box-shadow: 0 0 10px #555;
 }
-
 hr {
-    color: LightGrey;
+	color: LightGrey;
 }
-
 p.notice {
-  color: #4876FF;
-  font-size: 14px;
+	color: #4876FF;
+	font-size: 14px;
 }
-
 pre {
 	white-space: pre-wrap;
 	word-wrap: break-word;
 }
-
 ul {
-	padding:0px; 
-	margin:0px;
+	padding: 0px;
+	margin: 0px;
 }
-
 li {
 	margin: 5px;
 	text-decoration: none;
 }
-
 table {
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
 }
-
 tr {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis
 }
-
 .datenote {
-	text-align:right;
+	text-align: right;
 	display: inline-block;
 	padding-right: 2em;
 }
-
 #header {
 	background-color: black;
 	color: white;
 	height: 40px;
-	line-height:40px;
+	line-height: 40px;
 }
-
-#header a{
+#header a {
 	color: white;
 	padding-left: 10px;
 	text-decoration: none;
 }
-
-#header a:hover{
+#header a:hover {
 	padding-left: 10px;
 	color: lightgray;
 	background-color: black;
