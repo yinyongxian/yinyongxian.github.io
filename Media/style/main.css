@@ -79,8 +79,7 @@ a:link,a:visited{
 }
 
 a:hover{
-	background-color: LightGrey;
-    text-decoration:underline;  /*鼠标放上去有下划线*/
+	color: LightGrey;
 }
 
 img {
@@ -133,6 +132,25 @@ tr {
 
 .datenote {
 	text-align:right;
-	display: block;
+	display: inline-block;
 	padding-right: 2em;
+}
+
+#header {
+	background-color: black;
+	color: white;
+	height: 40px;
+	line-height:40px;
+}
+
+#header a{
+	color: white;
+	padding-left: 10px;
+	text-decoration: none;
+}
+
+#header a:hover{
+	padding-left: 10px;
+	color: lightgray;
+	background-color: black;
 }
