@@ -69,7 +69,8 @@ a:link, a:visited {
 	text-decoration: none;  /*超链接无下划线*/
 }
 a:hover {
-	color: LightGrey;
+	color: white;
+	background-color: black;
 }
 img {
 	text-align: center;
