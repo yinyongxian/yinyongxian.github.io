@@ -134,3 +134,7 @@ tr {
 	color: lightgray;
 	background-color: black;
 }
+.textaligncenter
+{
+	text-align:center;
+}
