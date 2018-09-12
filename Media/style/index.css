@@ -4,28 +4,28 @@
 .header-left {
 	float: left;
 }
-
 .header-right {
 	float: right
 }
-
 .header-left, .header-right {
 	list-style-type: none
 }
-
-td {
-	border-left: none;
-	border-right: none;
-	vertical-align:middle;
-}
-
 .float-right {
 	float: right
 }
-
 table {
 	width: 100%;
 	padding: 0px 10px;
+	border-collapse: collapse;
+}
+td {
+	border-left: none;
+	border-right: none;
+	vertical-align: middle;
+}
+tr {
+	border-top: 1px solid #EEE0E5;
+	border-bottom: 1px solid #EEE0E5;
 }
 span {
 	line-height: 26px;
