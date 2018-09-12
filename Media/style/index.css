@@ -15,7 +15,6 @@
 }
 table {
 	width: 100%;
-	padding: 0px 10px;
 	border-collapse: collapse;
 }
 td {
@@ -29,4 +28,7 @@ tr {
 }
 span {
 	line-height: 26px;
+}
+#table {
+	margin: 0px 20px;
 }
