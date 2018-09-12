@@ -24,9 +24,9 @@ td {
 }
 
 table {
-	border-left: none;
-	border-right: none;
-	margin: 0px 10px;
+	border: none;
+	width: 100%;
+	padding: 0px 10px;
 }
 span {
 	line-height: 26px;
