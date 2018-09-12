@@ -1,10 +1,12 @@
 @charset "UTF-8";
 /* CSS Document */
+* {
+	margin: 0px;
+	padding: 0px;
+}
 
 body {
 	font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	margin-left: 10px;
-	margin-right: 10px;
 }
 P {
 	line-height: 1.6;
@@ -126,11 +128,19 @@ tr {
 }
 #header a {
 	color: white;
-	padding-left: 10px;
 	text-decoration: none;
 }
+
+#header ul
+{
+	margin-left: 10px;
+}
+
+#header li
+{
+	display: inline;
+}
 #header a:hover {
-	padding-left: 10px;
 	color: lightgray;
 	background-color: black;
 }
