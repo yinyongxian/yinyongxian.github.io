@@ -104,11 +104,7 @@ li {
 	margin: 5px;
 	text-decoration: none;
 }
-table {
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
-}
+
 tr {
 	white-space: nowrap;
 	overflow: hidden;
