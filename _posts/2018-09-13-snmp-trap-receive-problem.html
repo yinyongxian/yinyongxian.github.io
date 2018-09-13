@@ -1,0 +1,47 @@
+---
+layout: default
+title: SNMP Trap接收问题解决办法
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SNMP Trap接收问题解决办法</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.ul-padding-left {
+	padding-left: 4em;
+}
+.ol-padding-left {
+	padding-left: 4em;
+}
+</style>
+</head>
+<body>
+<h1>SNMP Trap接收问题解决办法</h1>
+<p>简要介绍SNMP和Trap
+<ul class="ul-padding-left">
+  <li>SNMP(Simple Network Management Protocol)简单网络管理协议。</li>
+  <li>Trap是终端设备发送给终端管理器的基于SNMP协议的告警信息。</li>
+</ul>
+</p>
+<p>软件管理基于SNMP的设备时需要接收设备发送的Trap，很多时候软件无法收到Trap。
+<p>检查以下配置：</p>
+<ol class="ol-padding-left">
+  <li>关闭防火墙</li>
+  <li>关闭杀毒软件</li>
+  <li>系统SNMP Trap服务关闭</li>
+  <li>162端口没有被其他程序占用</li>
+  <li>162端口被编写的程序使用</li>
+</ol>
+</p>
+<p>以上配置若都正确，一般就能接收到SNMP的Trap报文。</p>
+<p>检查方式：
+<ul class="ul-padding-left">
+  <li>抓包工具（Wireshark等）能抓到Trap报文可排除1、2。</li>
+  <li>通过 netstat -ano 命令查看162端口对应PID，若与编写的程序PID一致，可排除3、4、5。</li>
+</ul>
+</p>
+</body>
+</html>
