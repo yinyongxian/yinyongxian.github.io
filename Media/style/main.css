@@ -4,7 +4,6 @@
 	margin: 0px;
 	padding: 0px;
 }
-
 body {
 	font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
@@ -104,7 +103,6 @@ li {
 	margin: 5px;
 	text-decoration: none;
 }
-
 tr {
 	white-space: nowrap;
 	overflow: hidden;
@@ -126,21 +124,19 @@ tr {
 	color: white;
 	text-decoration: none;
 }
-
-#header ul
-{
+#header ul {
 	margin-left: 10px;
 }
-
-#header li
-{
+#header li {
 	display: inline;
 }
 #header a:hover {
 	color: lightgray;
 	background-color: black;
 }
-.textaligncenter
-{
-	text-align:center;
+.textaligncenter {
+	text-align: center;
+}
+.body-content {
+	margin: 0px 10px;
 }
