@@ -140,3 +140,11 @@ tr {
 .body-content {
 	margin: 0px 10px;
 }
+
+.padding-left-4em {
+	padding-left: 4em;
+}
+
+.font-weight-bold {
+	font-weight: bold;
+}
