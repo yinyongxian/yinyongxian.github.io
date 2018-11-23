@@ -28,5 +28,16 @@ title: 查看MySQL日志
   <pre>SET GLOBAL general_log = 'OFF';</pre>
   <p>调试完成后记得关闭日志，减少不必要的性能浪费。</p>
 </ol>
+<p>合并的命令行，需替换名字和密码。</p>
+<pre>mysql -uusername -ppassward
+SET GLOBAL general_log = 'ON';</pre>
+<h2>查看查询慢日志</h2>
+<p>long_query_time 的单位是秒。</p>
+<pre>mysql -uusername -ppassward
+SET GLOBAL slow_query_log = 'ON';
+SET GLOBAL long_query_time = 5;</pre>
+<p>同样记得关闭。</p>
+<pre>SET GLOBAL slow_query_log = 'OFF';</pre>
+<br>
 </body>
 </html>
