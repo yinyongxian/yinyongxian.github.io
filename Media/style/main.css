@@ -8,8 +8,9 @@ body {
 	font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 P {
-	line-height: 1.6;
+	line-height: 1.8;
 	text-indent: 2em;
+	margin: 16px 0px;
 }
 H1 {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
@@ -63,15 +64,14 @@ pre {
 code {
 	font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
 }
-a {
-	color: black;
-}
 a:link, a:visited {
 	text-decoration: none;  /*超链接无下划线*/
 }
+a {
+	color: #0070c9;
+}
 a:hover {
-	color: white;
-	background-color: black;
+	text-decoration: underline;
 }
 img {
 	text-align: center;
@@ -100,6 +100,7 @@ ul {
 	margin: 0px;
 }
 li {
+	line-height: 1.8;
 	margin: 5px;
 	text-decoration: none;
 }
@@ -140,11 +141,9 @@ tr {
 .body-content {
 	margin: 0px 10px;
 }
-
 .padding-left-4em {
 	padding-left: 4em;
 }
-
 .font-weight-bold {
 	font-weight: bold;
 }
