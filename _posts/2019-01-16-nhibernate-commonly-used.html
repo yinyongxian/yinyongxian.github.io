@@ -1,0 +1,29 @@
+---
+layout: default
+title: NHibernate常用
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>NHibernate常用</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>NHibernate常用</h1>
+<h2>自动生成数据库</h2>
+<h3>配置文件</h3>
+<h4>hibernate.cfg.xml配置</h4>
+<pre>&lt;property name="hbm2ddl.auto"&gt;update&lt;/property&gt;</pre>
+<h4>代码中设置属性</h4>
+<pre>
+...
+configuration.SetProperty("hbm2ddl.auto", "update");
+configuration.BuildSessionFactory();
+...
+</pre>
+<h3>代码</h3>
+<pre>new SchemaExport(configuration).Execute(false, true, false);</pre>
+</body>
+</html>
