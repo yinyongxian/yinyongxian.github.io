@@ -51,7 +51,7 @@ title: 清流泉
     {% assign  raw_page_end = {{ paginator.page | plus: 2 }} %}
     {% assign  page_start = {{ raw_page_start | at_least: 1 }} %}
     {% assign  page_end = {{ raw_page_end | at_most: paginator.total_pages }} %}
-    函数测试{{ 4 | at_least: 5 }}
+    函数测试{{ 4 | at_least: 5 }} { 4 | at_least: 3 }}
     page_start：{{page_start}} page_end {{page_end}}
     {% for page in (page_start..page_end) %}
     {% if page == paginator.page %}
