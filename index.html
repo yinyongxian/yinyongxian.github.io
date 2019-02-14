@@ -48,7 +48,7 @@ title: 清流泉
     {% endif %}
 
     {% capture start %}{{ paginator.page | minus: 3 }}{% endcapture %}
-    {% for page in (page_start..page_end) limit:5 offset:start  %}
+    {% for i in (1..paginator.total_pages) limit: 5 offset: start %}
     {% if page == paginator.page %}
       <span class="active">{{ page }}</span>
     {% elsif page == 1 %}
