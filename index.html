@@ -40,6 +40,7 @@ title: 清流泉
     </div>
 
   <div style="text-align: center">
+    <div>
     {% if paginator.total_pages > 1 %}
     <!-- 分页代码 -->
     <!-- 上一页  -->
@@ -93,5 +94,7 @@ title: 清流泉
     {% endif %}
     {% endif %}
   </div>
+  <div>共{{ paginator.total_pages }}页 {{ paginator.total_posts }}篇</div>
+</div>
   </body>
 </html>
