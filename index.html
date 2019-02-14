@@ -48,7 +48,7 @@ title: 清流泉
     {% endif %}
 
     <!-- 显示页数 -->
-    {% assign  raw_page_start = {{ {{ paginator.page }} |  minus: 2 }} %}
+    {% assign  raw_page_start = {{ 0 | plus: paginator.page |  minus: 2 }} %}
     {% assign  raw_page_end = {{ 0 | plus: paginator.page | plus: 3 }} %}
     raw_page_end {{ raw_page_end }}
     <!-- 显示全部页 -->
