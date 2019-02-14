@@ -49,7 +49,7 @@ title: 清流泉
 
     <!-- 显示页数 -->
     {% assign  raw_page_start = {{ paginator.page | minus: 2 }} %}
-    {% assign  raw_page_end = {{ paginator.page + 2 }} %}
+    {% assign  raw_page_end = {{ paginator.page | plus: 2 }} %}
     raw_page_end {{ raw_page_end }}
     <!-- 显示全部页 -->
     {% if paginator.total_pages <= 5 %}
