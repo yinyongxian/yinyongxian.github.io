@@ -47,8 +47,8 @@ title: 清流泉
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">上一页</a>
     {% endif %}
 
-    {% assign  page_start = {{ {{ paginator.page | minus: 2 }} | at_least: 1 }} %}
-    {% assign  page_end = {{ {{ paginator.page | plus: 2 }} | at_most: paginator.total_pages }} %}
+    {% assign  page_start = {{ paginator.page | minus: 2 | at_least: 1 }} %}
+    {% assign  page_end = {{ paginator.page | plus: 2 | at_most: paginator.total_pages }} %}
     page_start：{{page_start}} page_end {{page_end}}
     {% for page in (page_start..page_end) %}
     {% if page == paginator.page %}
