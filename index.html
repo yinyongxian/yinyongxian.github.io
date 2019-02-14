@@ -49,7 +49,15 @@ title: 清流泉
 
     {% capture page_start %}{{ paginator.page | minus: 2 }}{% endcapture %}
     {% capture page_end %}{{ paginator.page | plus: 2 }}{% endcapture %}
-    
+
+    {% if page_start <= 0%}
+      {% assign page_start = 1 %}
+    {% endif %}
+
+    {% if page_end > paginator.total_pages%}
+    {% assign page_end = paginator.total_pages %}
+    {% endif %}
+
     {% for page in (page_start..page_end) %}
     {% if page == paginator.page %}
       <span class="active">{{ page }}</span>
