@@ -44,7 +44,6 @@ title: 清流泉
   <div style="text-align: center">
     {% if paginator.total_pages > 1 %}
     <!-- 分页代码 -->
-    <a href="{{site.baseurl}}">site.baseurl</a>
     {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">上一页</a>
     {% endif %}
@@ -55,7 +54,7 @@ title: 清流泉
     {% elsif page == 1 %}
       <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
     {% else %}
-      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+      <a href="{{ site.paginate_path | prepend: "/" | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
     {% endif %}
     {% endfor %}
 
