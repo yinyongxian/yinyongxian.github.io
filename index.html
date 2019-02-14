@@ -62,11 +62,14 @@ title: 清流泉
     {% elsif paginator.page > {{ paginator.total_pages | minus: 2}} %}
     {% assign  page_start = {{ paginator.total_pages | minus: 4}} %} %}
     {% assign  page_end = paginator.total_pages %}
+    {% else %}
+    {% assign  page_start = raw_page_start %} %}
+    {% assign  page_end = raw_page_end %}
     {% endif %}
     
-    page_start：{{page_start}} page_end {{page_end}} total_pages {{paginator.total_pages}}
+    page_start：{{page_start}} page_end {{page_end}} paginator.page {{ paginator.page }} total_pages {{paginator.total_pages}}
 
-    {% for page in (page_start：..page_end) %}
+    {% for page in (page_start..page_end) %}
     {% if page == paginator.page %}
       <span class="active">{{ page }}</span>
     {% elsif page == 1 %}
