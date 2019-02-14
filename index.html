@@ -23,9 +23,7 @@ title: 清流泉
         <tbody>
           {% for post in paginator.posts %}
           <tr
-            onClick="parent.location='{{
-              post.url
-            }}'; this.style.backgroundColor='#FFFFFF';"
+            onClick="parent.location='{{ post.url }}'; this.style.backgroundColor='#FFFFFF';"
             onMouseOver="this.style.backgroundColor='LightGrey';cursor: pointer;"
             onMouseOut="this.style.backgroundColor='#FFFFFF'"
           >
@@ -44,11 +42,12 @@ title: 清流泉
   <div style="text-align: center">
     {% if paginator.total_pages > 1 %}
     <!-- 分页代码 -->
+ 
     {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">上一页</a>
     {% endif %}
 
-    {% for page in (1..paginator.total_pages) %}
+    {% for i in (1..paginator.total_pages) limit:5 offset:{{paginator.page-1}} %}
     {% if page == paginator.page %}
       <span class="active">{{ page }}</span>
     {% elsif page == 1 %}
