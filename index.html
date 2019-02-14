@@ -50,11 +50,9 @@ title: 清流泉
     <!-- 显示页数 -->
     {% assign  display_page_size = 5 %}
     {% assign  display_page_size_half = 2 %}
-    {% assign  paginator_page = {{ 0 | plus: paginator.page }} %}
-    {% assign  paginator_total_pages = {{ 0 | plus: paginator.total_pages }} %}
-    paginator_page {{ paginator_page }}
-    {% assign  raw_page_start = {{ paginator_page |  minus: display_page_size_half }} %}
-    {% assign  raw_page_end = {{ paginator_page | plus: display_page_size_half }} %}
+
+    {% assign  raw_page_start = {{ 0 | plus: paginator.page |  minus: display_page_size_half }} %}
+    {% assign  raw_page_end = {{ 0 | plus: paginator.page | plus: display_page_size_half }} %}
 
     raw_page_end {{ raw_page_end }}
     <!-- 显示全部页 -->
