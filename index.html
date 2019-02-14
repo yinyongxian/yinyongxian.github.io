@@ -48,17 +48,23 @@ title: 清流泉
     {% endif %}
 
     <!-- 显示页数 -->
-    {% assign  raw_page_start = {{ 0 | plus: paginator.page |  minus: 2 }} %}
-    {% assign  raw_page_end = {{ 0 | plus: paginator.page | plus: 2 }} %}
+    {% assign  display_page_size = 5 %}
+    {% assign  display_page_size_half = {{ display_page_size | divided_by: 2 }} %}
+    {% assign  paginator_page = {{ 0 | plus: paginator.page }} %}
+    {% assign  paginator_total_pages = {{ 0 | plus: paginator.total_pages }} %}
+
+    {% assign  raw_page_start = {{ paginator_page |  minus: display_page_size_half }} %}
+    {% assign  raw_page_end = {{ paginator_page | plus: display_page_size_half }} %}
+
     raw_page_end {{ raw_page_end }}
     <!-- 显示全部页 -->
-    {% if paginator.total_pages <= 5 %}
+    {% if paginator.total_pages <= display_page_size %}
     {% assign  page_start = 1 }} %}
     {% assign  page_end = paginator.total_pages }} %}
     <!-- 显示部分页 -->
-    {% elsif paginator.page < 3 %}
+    {% elsif paginator.page <= display_page_size_half %}
     {% assign  page_start = 1 }} %}
-    {% assign  page_end = 5 }} %}
+    {% assign  page_end = display_page_size }} %}
     {% elsif paginator.page > {{ 0 | plus: paginator.total_pages | minus: 2 }} %}
     hello
     {% assign  page_start = {{ 0 | plus: paginator.total_pages | minus: 4 }} %}
