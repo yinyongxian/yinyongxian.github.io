@@ -50,6 +50,7 @@ title: 清流泉
     <!-- 显示页数 -->
     {% assign  display_page_size = 5 %}
     {% assign  display_page_size_half = {{ display_page_size | divided_by: 2 }} %}
+    display_page_size_half {{ display_page_size_half }}
     {% assign  paginator_page = {{ 0 | plus: paginator.page }} %}
     {% assign  paginator_total_pages = {{ 0 | plus: paginator.total_pages }} %}
 
