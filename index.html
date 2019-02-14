@@ -48,24 +48,26 @@ title: 清流泉
     {% endif %}
 
     <!-- 显示页数 -->
-    {% assign  display_page_size = 5 %}
-    {% assign  display_page_size_half = 2 %}
+    {% assign display_page_count = 5 %}
+    {% assign display_page_count_half = 2 %}
+    {% assign minus_display_page_count_half = {{ 0 | plus: paginator.total_pages | minus: display_page_count_half }} %}
+    {% assign display_page_count_minus_one = {{ 0 | plus: display_page_count | minus: 1 }} %}
 
-    {% assign  raw_page_start = {{ 0 | plus: paginator.page |  minus: display_page_size_half }} %}
-    {% assign  raw_page_end = {{ 0 | plus: paginator.page | plus: display_page_size_half }} %}
+    {% assign raw_page_start = {{ 0 | plus: paginator.page |  minus: display_page_count_half }} %}
+    {% assign raw_page_end = {{ 0 | plus: paginator.page | plus: display_page_count_half }} %}
 
     raw_page_end {{ raw_page_end }}
     <!-- 显示全部页 -->
-    {% if paginator.total_pages <= display_page_size %}
+    {% if paginator.total_pages <= display_page_count %}
     {% assign  page_start = 1 }} %}
     {% assign  page_end = paginator.total_pages }} %}
     <!-- 显示部分页 -->
-    {% elsif paginator.page <= display_page_size_half %}
+    {% elsif paginator.page <= display_page_count_half %}
     {% assign  page_start = 1 }} %}
-    {% assign  page_end = display_page_size }} %}
-    {% elsif paginator.page > 6 %}
+    {% assign  page_end = display_page_count }} %}
+    {% elsif paginator.page > minus_display_page_count_half %}
     hello
-    {% assign  page_start = {{ 0 | plus: paginator.total_pages | minus: 4 }} %}
+    {% assign  page_start = {{ 0 | plus: paginator.total_pages | minus: display_page_count_minus_one }} %}
     {% assign  page_end = paginator.total_pages %}
     {% else %}
     hello1
