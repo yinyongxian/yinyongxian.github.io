@@ -67,17 +67,13 @@ title: 清流泉
     {% assign  page_start = 1 }} %}
     {% assign  page_end = display_page_count }} %}
     {% elsif paginator.page > minus_display_page_count_half %}
-    hello
     {% assign  page_start = {{ 0 | plus: paginator.total_pages | minus: display_page_count_minus_one }} %}
     {% assign  page_end = paginator.total_pages %}
     {% else %}
-    hello1
     {% assign  page_start = raw_page_start %}
     {% assign  page_end = raw_page_end %}
     {% endif %}
-    raw_page_start {{ raw_page_start }} raw_page_end {{ raw_page_end }}
-    page_start：{{page_start}} page_end {{page_end}} paginator.page {{ paginator.page }} total_pages {{paginator.total_pages}}
-
+    <!-- 显示 -->
     {% for page in (page_start..page_end) %}
     {% if page == paginator.page %}
       <span class="active">{{ page }}</span>
@@ -94,7 +90,7 @@ title: 清流泉
     {% endif %}
     {% endif %}
   </div>
-  <div>共{{ paginator.total_pages }}页 {{ paginator.total_posts }}篇</div>
+  <div>共 {{ paginator.total_pages }} 页 {{ paginator.total_posts }} 篇</div>
 </div>
   </body>
 </html>
