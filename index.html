@@ -57,7 +57,6 @@ title: 清流泉
     {% assign raw_page_start = {{ 0 | plus: paginator.page |  minus: display_page_count_half }} %}
     {% assign raw_page_end = {{ 0 | plus: paginator.page | plus: display_page_count_half }} %}
 
-    raw_page_end {{ raw_page_end }}
     <!-- 显示全部页 -->
     {% if paginator.total_pages <= display_page_count %}
     {% assign  page_start = 1 }} %}
