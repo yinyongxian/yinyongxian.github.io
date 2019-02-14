@@ -41,6 +41,7 @@ title: 清流泉
       </table>
     </div>
 
+  <div style="text-align: center">
     {% if paginator.total_pages > 1 %}
     <!-- 分页代码 -->
     {% if paginator.previous_page %}
@@ -61,6 +62,6 @@ title: 清流泉
     <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页</a>
     {% endif %}
     {% endif %}
-
+  </div>
   </body>
 </html>
