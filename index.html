@@ -50,20 +50,25 @@ title: 清流泉
     {% assign  raw_page_start = {{ paginator.page | minus: 2}} %}
     {% assign  raw_page_end = {{ paginator.page | plus: 2 }} %}
 
+    <!--  开始页 -->
     {% if raw_page_start < 1 %}
     {% assign  page_start = 1 }} %}
+    {% assign  page_end = page_start + 5 }} %}
     {% else %}
     {% assign  page_start = raw_page_start }} %}
     {% endif %}
 
+    <!-- 结束页 -->
     {% if raw_page_end > paginator.total_pages %}
     {% assign  page_end = paginator.total_pages }} %}
+    {% if page_start > page_end - 5 or %}
     {% else %}
     {% assign  page_end = raw_page_end }} %}
     {% endif %}
     
-    page_start：{{page_start}} page_end {{page_end}} total_pages{{paginator.total_pages}}
-    {% for page in (page_start..page_end) %}
+    page_start：{{page_start}} page_end {{page_end}} total_pages {{paginator.total_pages}}
+    <!-- {% for page in (page_start..page_end) %} -->
+    {% for page in (paginator.total_pages limit:5 offset:{{ paginator.page }} %}
     {% if page == paginator.page %}
       <span class="active">{{ page }}</span>
     {% elsif page == 1 %}
