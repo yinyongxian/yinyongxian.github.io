@@ -28,18 +28,18 @@ public static class SerialPortService
 {
     static SerialPortService()
     {
-        serialPorts = GetSerialPortNames();
+        serialPortNames = GetSerialPortNames();
         MonitorDeviceChanges();
     }
 
-    private static string[] serialPorts;
+    private static string[] serialPortNames;
 
     private static ManagementEventWatcher arrival;
     private static ManagementEventWatcher removal;
 
-    public static IEnumerable&lt;string&gt; SerialPorts
+    public static IEnumerable&lt;string&gt; SerialPortNames
     {
-        get { return serialPorts; }
+        get { return serialPortNames; }
     }
 
     public static event EventHandler&lt;SerialPortsChangedEventArgs&gt; SerialPortsChanged;
@@ -48,7 +48,7 @@ public static class SerialPortService
         var handler = SerialPortsChanged;
         if (handler != null)
         {
-            var eventArgs = new SerialPortsChangedEventArgs(eventType, serialPorts);
+            var eventArgs = new SerialPortsChangedEventArgs(eventType, serialPortNames);
             handler(null, eventArgs);
         }
     }
@@ -63,8 +63,8 @@ public static class SerialPortService
             arrival = new ManagementEventWatcher(deviceArrivalQuery);
             removal = new ManagementEventWatcher(deviceRemovalQuery);
 
-            arrival.EventArrived += (sender, e) => OnPortsChanged(EventType.Insertion);
-            removal.EventArrived += (sender, e) => OnPortsChanged(EventType.Removal);
+            arrival.EventArrived += (sender, e) =&gt; OnPortsChanged(EventType.Insertion);
+            removal.EventArrived += (sender, e) =&gt; OnPortsChanged(EventType.Removal);
 
             arrival.Start();
             removal.Start();
@@ -77,12 +77,12 @@ public static class SerialPortService
 
     private static void OnPortsChanged(EventType eventType)
     {
-        lock (serialPorts)
+        lock (serialPortNames)
         {
             var availableSerialPorts = GetSerialPortNames();
-            if (!serialPorts.SequenceEqual(availableSerialPorts))
+            if (!serialPortNames.SequenceEqual(availableSerialPorts))
             {
-                serialPorts = availableSerialPorts;
+                serialPortNames = availableSerialPorts;
                 RaiseSerialPortsChanged(eventType);
             }
         }
@@ -112,19 +112,19 @@ public class SerialPortsChangedEventArgs : EventArgs
 {
     private readonly EventType eventType;
 
-    private readonly string[] serialPorts;
+    private readonly string[] serialPortNames;
 
-    public SerialPortsChangedEventArgs(EventType eventType, params string[] serialPorts)
+    public SerialPortsChangedEventArgs(EventType eventType, params string[] serialPortNames)
     {
         this.eventType = eventType;
-        this.serialPorts = serialPorts;
+        this.serialPortNames = serialPortNames;
     }
 
-    public IEnumerable&lt;string&gt; SerialPorts
+    public IEnumerable&lt;string&gt; SerialPortNames
     {
         get
         {
-            return serialPorts;
+            return serialPortNames;
         }
     }
 
@@ -135,7 +135,7 @@ public class SerialPortsChangedEventArgs : EventArgs
             return eventType;
         }
     }
-}
+}    
 </pre>
 </body>
 </html>
