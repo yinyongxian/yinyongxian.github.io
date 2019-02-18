@@ -28,7 +28,7 @@ public static class SerialPortService
 {
     static SerialPortService()
     {
-        serialPorts = GetAvailableSerialPorts();
+        serialPorts = GetSerialPortNames();
         MonitorDeviceChanges();
     }
 
@@ -79,7 +79,7 @@ public static class SerialPortService
     {
         lock (serialPorts)
         {
-            var availableSerialPorts = GetAvailableSerialPorts();
+            var availableSerialPorts = GetSerialPortNames();
             if (!serialPorts.SequenceEqual(availableSerialPorts))
             {
                 serialPorts = availableSerialPorts;
@@ -88,7 +88,7 @@ public static class SerialPortService
         }
     }
 
-    private static string[] GetAvailableSerialPorts()
+    private static string[] GetSerialPortNames()
     {
         try
         {
