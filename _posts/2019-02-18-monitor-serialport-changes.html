@@ -1,0 +1,141 @@
+---
+layout: default
+title: 监测串口变化
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>监测串口变化</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>监测串口变化</h1>
+<p>软件与串口设备进行通信时，需要监测串口的状态，以便更新串口设备的连接状态。</p>
+<p>遗产代码中采用后台线程定时轮训进行监测。为了能够及时轮训，使用较小的轮训间隔。</p>
+<p>轮训有一个冲突：</p>
+<pre>轮训间隔小，造成资源浪费；轮训间隔大，轮训不及时。</pre>
+<p>为避免一个线程的资源浪费改成事件监测。</p>
+<pre>
+/// &lt;summary&gt;
+/// Monitor serialport changes
+/// 尹永贤
+/// yinyongxian@qq.com
+/// 2019-1-28 15:35:06
+/// &lt;/summary&gt;
+public static class SerialPortService
+{
+    static SerialPortService()
+    {
+        serialPorts = GetAvailableSerialPorts();
+        MonitorDeviceChanges();
+    }
+
+    private static string[] serialPorts;
+
+    private static ManagementEventWatcher arrival;
+    private static ManagementEventWatcher removal;
+
+    public static IEnumerable&lt;string&gt; SerialPorts
+    {
+        get { return serialPorts; }
+    }
+
+    public static event EventHandler&lt;SerialPortsChangedEventArgs&gt; SerialPortsChanged;
+    private static void RaiseSerialPortsChanged(EventType eventType)
+    {
+        var handler = SerialPortsChanged;
+        if (handler != null)
+        {
+            var eventArgs = new SerialPortsChangedEventArgs(eventType, serialPorts);
+            handler(null, eventArgs);
+        }
+    }
+
+    private static void MonitorDeviceChanges()
+    {
+        try
+        {
+            var deviceArrivalQuery = new WqlEventQuery("SELECT * FROM Win32_DeviceChangeEvent WHERE EventType = 2");
+            var deviceRemovalQuery = new WqlEventQuery("SELECT * FROM Win32_DeviceChangeEvent WHERE EventType = 3");
+
+            arrival = new ManagementEventWatcher(deviceArrivalQuery);
+            removal = new ManagementEventWatcher(deviceRemovalQuery);
+
+            arrival.EventArrived += (sender, e) => OnPortsChanged(EventType.Insertion);
+            removal.EventArrived += (sender, e) => OnPortsChanged(EventType.Removal);
+
+            arrival.Start();
+            removal.Start();
+        }
+        catch (Exception)
+        {
+            // ignored
+        }
+    }
+
+    private static void OnPortsChanged(EventType eventType)
+    {
+        lock (serialPorts)
+        {
+            var availableSerialPorts = GetAvailableSerialPorts();
+            if (!serialPorts.SequenceEqual(availableSerialPorts))
+            {
+                serialPorts = availableSerialPorts;
+                RaiseSerialPortsChanged(eventType);
+            }
+        }
+    }
+
+    private static string[] GetAvailableSerialPorts()
+    {
+        try
+        {
+            var currentPortNames = SerialPort.GetPortNames();
+            return currentPortNames;
+        }
+        catch (Exception)
+        {
+            return Enumerable.Empty&lt;string&gt;().ToArray();
+        }
+    }
+}
+
+public enum EventType
+{
+    Insertion,
+    Removal
+}
+
+public class SerialPortsChangedEventArgs : EventArgs
+{
+    private readonly EventType eventType;
+
+    private readonly string[] serialPorts;
+
+    public SerialPortsChangedEventArgs(EventType eventType, params string[] serialPorts)
+    {
+        this.eventType = eventType;
+        this.serialPorts = serialPorts;
+    }
+
+    public IEnumerable&lt;string&gt; SerialPorts
+    {
+        get
+        {
+            return serialPorts;
+        }
+    }
+
+    public EventType EventType
+    {
+        get
+        {
+            return eventType;
+        }
+    }
+}
+</pre>
+</body>
+</html>
