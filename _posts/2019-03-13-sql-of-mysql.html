@@ -1,0 +1,26 @@
+---
+layout: default
+title: sql Of MySQL
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sql Of MySQL</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>sql Of MySQL</h1>
+<p>查看各个表行数</p>
+<pre>
+use information_schema;
+
+select table_name,table_rows 
+from tables
+where TABLE_SCHEMA = 'TableName'
+order by table_rows desc;
+</pre>
+<br>
+</body>
+</html>
