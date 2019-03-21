@@ -1,0 +1,48 @@
+---
+layout: default
+title: C# 反射子类
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sql Of MySQL</title>
+<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>C# 反射子类</h1>
+<p>反射生成父类的子类类型可以避免写一些机械的代码，不用每次子类数量变更都要更改子类生成器。接口也可以采用类似写法。</p>
+<pre>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+
+namespace YYX.Reflection
+{
+    public static class SubClassFinder
+    {
+        public static IEnumerable&lt;T&gt; Find&lt;T&gt;(Assembly assembly)
+            where T : class
+        {
+            var type = typeof(T);
+            var types = FindSubclassTypes(assembly, type);
+            var result = types.Select(item => (T)assembly.CreateInstance(item.FullName, true));
+            return result;
+        }
+
+        private static IEnumerable&lt;Type&gt; FindSubclassTypes(Assembly assembly, Type parent)
+        {
+            return
+                assembly
+                .GetTypes()
+                .Where(childType => childType.IsSubclassOf(parent))
+                .ToArray();
+        }
+    }
+}
+</pre>
+<br>
+</body>
+</html>
