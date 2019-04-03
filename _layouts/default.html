@@ -57,6 +57,19 @@ $(function(){
 	background: url(/Media/images/top-bottom/bottom-hover.png);
 	background-size: contain;
 }
+
+.btn-pay{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	color: #FFF;
+	background-color: #ea6f5a;
+	font-size: 16px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 50px;
+	margin: 20px;
+}
 </style>
 </head>
 <body>
@@ -72,5 +85,12 @@ $(function(){
 <div id="updown"><span class="up"></span><span class="down"></span></div>
 <br>
 <div class="body-content"> {{ content }} </div>
+
+<div style="text-align: center">
+	<a href="{{ site.baseurl }}/about/2017-07-29-pay.html" >
+		<div class="btn-pay">打赏</div>
+	</a>
+</div>
+
 </body>
 </html>
