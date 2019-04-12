@@ -154,17 +154,17 @@ tr {
 
 .jump {
   position: relative;
-  animation: jump 0.1s linear 0s infinite alternate;
+  animation: jump 1s linear 0s infinite;
 }
 
 @keyframes jump {
   0% {
-    top: 0px;
+    top: 0em;
   }
   50% {
-    top: -3px;
+    top: -0.2em;
   }
   100% {
-    top: 1px;
+    top: 0em;
   }
 }
