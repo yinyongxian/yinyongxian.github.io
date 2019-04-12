@@ -151,3 +151,20 @@ tr {
 .delete {
 	text-decoration: line-through;
 }
+
+.jump {
+  position: relative;
+  animation: jump 0.1s linear 0s infinite alternate;
+}
+
+@keyframes jump {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -3px;
+  }
+  100% {
+    top: 1px;
+  }
+}
