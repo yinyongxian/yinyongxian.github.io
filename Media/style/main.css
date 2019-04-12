@@ -147,3 +147,7 @@ tr {
 .font-weight-bold {
 	font-weight: bold;
 }
+
+.delete {
+	text-decoration: line-through;
+}
