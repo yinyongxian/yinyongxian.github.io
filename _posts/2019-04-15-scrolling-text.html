@@ -1,0 +1,55 @@
+---
+layout: default
+title: 滚动文字
+---
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>滚动文字</title>
+
+        <link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+        <script src="../Media/js/vue.min.js"></script>
+        <style>
+            #text {
+                width: 90%;
+            }
+
+            #scroll {
+                width: 90%;
+                margin: auto;
+                font-size: 36px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>滚动文字</h1>
+
+
+        <div id="app">
+            <div class="center">
+                <input v-model="scrolText" type="text" id="text"
+                    placeholder="请输入文字">
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="scroll">
+                <marquee>{{ scrolText }}{{ scrolText }}{{ scrolText }}{{
+                    scrolText }}{{ scrolText }}{{ scrolText }}{{ scrolText }}{{
+                    scrolText }}{{ scrolText }}{{ scrolText }}</marquee>
+            </div>
+        </div>
+
+        <script>
+        new Vue({
+            el: '#app',
+            data: {
+                scrolText:"尹永贤" 
+            }
+        })
+        </script>
+    </body>
+</html>
