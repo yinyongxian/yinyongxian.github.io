@@ -1,5 +1,4 @@
 ---
-layout: default
 title: 滚动文字
 ---
 
@@ -12,7 +11,6 @@ title: 滚动文字
         <link href="../Media/style/main.css" rel="stylesheet" type="text/css">
         <!-- <script src="../Media/js/vue.min.js"></script> -->
         <script src="../Media/js/vue.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
         <style>
             #text {
                 width: 90%;
@@ -29,8 +27,6 @@ title: 滚动文字
         <h1>滚动文字</h1>
 
         <div id="app">
-            <p>{{ scrollingText }}0</p>
-            {{ scrollingText }}1
             <div class="center">
                 <input v-model="scrollingText" type="text" id="text" placeholder="请输入文字">
             </div>
@@ -40,10 +36,9 @@ title: 滚动文字
             <br>
             <br>
             <div id="scroll">
-                <!-- <marquee>{{ scrollingText }}{{ scrollingText }}{{ scrollingText }}{{
+                <marquee>{{ scrollingText }}{{ scrollingText }}{{ scrollingText }}{{
                     scrollingText }}{{ scrollingText }}{{ scrollingText }}{{ scrollingText }}{{
-                    scrollingText }}{{ scrollingText }}{{ scrollingText }}</marquee> -->
-                {{ scrollingText }}2
+                    scrollingText }}{{ scrollingText }}{{ scrollingText }}</marquee>
             </div>
             <br>
             <br>
@@ -56,7 +51,7 @@ title: 滚动文字
             new Vue({
                 el: '#app',
                 data: {
-                    scrollingText: "尹永贤"
+                    scrollingText: ''
                 }
             })
         </script>
