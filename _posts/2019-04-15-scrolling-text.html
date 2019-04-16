@@ -28,10 +28,10 @@ title: 滚动文字
         <h1>滚动文字</h1>
 
         <div id="app">
-            <p>{{ text }}0</p>
-            {{ text }}1
+            <p>{{ scrollingText }}0</p>
+            {{ scrollingText }}1
             <div class="center">
-                <input v-model="text" type="text" id="text" placeholder="请输入文字">
+                <input v-model="scrollingText" type="text" id="text" placeholder="请输入文字">
             </div>
             <br>
             <br>
@@ -39,10 +39,10 @@ title: 滚动文字
             <br>
             <br>
             <div id="scroll">
-                <!-- <marquee>{{ text }}{{ text }}{{ text }}{{
-                    text }}{{ text }}{{ text }}{{ text }}{{
-                    text }}{{ text }}{{ text }}</marquee> -->
-                {{ text }}2
+                <!-- <marquee>{{ scrollingText }}{{ scrollingText }}{{ scrollingText }}{{
+                    scrollingText }}{{ scrollingText }}{{ scrollingText }}{{ scrollingText }}{{
+                    scrollingText }}{{ scrollingText }}{{ scrollingText }}</marquee> -->
+                {{ scrollingText }}2
             </div>
             <br>
             <br>
@@ -55,7 +55,7 @@ title: 滚动文字
         new Vue({
             el: '#app',
             data: {
-                text:"尹永贤" 
+                scrollingText:"尹永贤"
             }
         })
         </script>
