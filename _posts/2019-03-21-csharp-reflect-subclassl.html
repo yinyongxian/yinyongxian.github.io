@@ -12,36 +12,64 @@ title: C# 反射子类
 </head>
 <body>
 <h1>C# 反射子类</h1>
-<p>反射生成父类的子类类型，可以避免写一些机械的代码，不用每次子类数量变更都要更改子类生成器。接口也可以采用类似写法。</p>
+<p>反射生成子类，可以避免写一些机械代码。不用每次子类数量变更时，都要修改子类生成器的代码。</p>
 <pre>
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 
-namespace YYX.Reflection
+namespace YYX.ReflectionSomething
 {
-    public static class SubClassFinder
+    public static class DerivedClassesFinder
     {
-        public static IEnumerable&lt;T&gt; Find&lt;T&gt;(Assembly assembly)
+        public static IEnumerable&lt;T&gt; Find&lt;T&gt;()
             where T : class
         {
             var type = typeof(T);
-            var types = FindSubclassTypes(assembly, type);
-            var result = types.Select(item => (T)assembly.CreateInstance(item.FullName, true));
-            return result;
-        }
-
-        private static IEnumerable&lt;Type&gt; FindSubclassTypes(Assembly assembly, Type parent)
-        {
-            return
-                assembly
-                .GetTypes()
-                .Where(childType => childType.IsSubclassOf(parent))
-                .ToArray();
+            var tEnumerable =
+                AppDomain
+                .CurrentDomain
+                .GetAssemblies()
+                .SelectMany(assembly =>
+                {
+                    var types = assembly.GetTypes();
+                    var findTypes = types.Where(derivedClass => derivedClass.IsSubclassOf(type));
+                    return findTypes.Select(derivedClass => (T)assembly.CreateInstance(derivedClass.FullName, true));
+                });
+            return tEnumerable;
         }
     }
 }
 </pre>
+<p>接口也可以用类似写法</p>
+<Pre>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace YYX.ReflectionSomething
+{
+    public static class ImplementInterfaceFinder
+    {
+        public static IEnumerable&lt;T&gt; Find&lt;T&gt;()
+        {
+            var type = typeof(T);
+            var tEnumerable =
+                AppDomain
+                .CurrentDomain
+                .GetAssemblies()
+                .SelectMany(assembly =>
+                {
+                    var types = assembly.GetTypes();
+                    var findTypes = types.Where(derivedClass => derivedClass.GetInterfaces().Contains(type));
+                    return findTypes.Select(derivedClass => (T)assembly.CreateInstance(derivedClass.FullName, true));
+                });
+            return tEnumerable;
+        }
+    }
+}
+</Pre>
+<h2>源码</h2>
+<P><a href="https://github.com/yinyongxian/YYX.ReflectionSomething">下载</a></P>
 </body>
 </html>
