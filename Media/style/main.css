@@ -113,7 +113,7 @@ tr {
 	text-align: right;
 	display: inline-block;
 	padding-right: 2em;
-	float: right;
+	width: 100%;
 }
 #header {
 	background-color: black;
