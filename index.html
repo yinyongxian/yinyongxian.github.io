@@ -5,92 +5,92 @@ title: 清流泉
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta content="尹永贤" name="keywords" />
-    <meta content="清流泉" name="description" />
-    <meta name="baidu-site-verification" content="TpfItT3Lon" />
-    <meta name="yandex-verification" content="2004aa2d553486a4" />
-    <title>清流泉</title>
-    <link href="Media/style/main.css" rel="stylesheet" type="text/css" />
-    <link href="Media/style/index.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <h1 style="text-align:center;">清流泉</h1>
-    <br />
-    <div id="table">
-      <table>
-        <tbody>
-          {% for post in paginator.posts %}
-          <tr
-            onClick="parent.location='{{ post.url }}'; this.style.backgroundColor='#FFFFFF';"
-            onMouseOver="this.style.backgroundColor='LightGrey';this.style.cursor='pointer';"
-            onMouseOut="this.style.backgroundColor='#FFFFFF'"
-          >
-            <td>
-              <span
-                ><a href="{{ post.url }}">{{ post.title }}</a></span
-              >
-              <span class="float-right">{{ post.date | date: "%F" }}</span>
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta content="尹永贤" name="keywords" />
+  <meta content="清流泉" name="description" />
+  <meta name="baidu-site-verification" content="TpfItT3Lon" />
+  <meta name="yandex-verification" content="2004aa2d553486a4" />
+  <title>清流泉</title>
+  <link href="Media/style/main.css" rel="stylesheet" type="text/css" />
+  <link href="Media/style/index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1 style="text-align:center;">清流泉</h1>
+  <br />
+  <div id="table">
+    <table>
+      <tbody>
+        {% for post in site.posts %}
+        <tr onClick="parent.location='{{ post.url }}'; this.style.backgroundColor='#FFFFFF';"
+          onMouseOver="this.style.backgroundColor='LightGrey';this.style.cursor='pointer';"
+          onMouseOut="this.style.backgroundColor='#FFFFFF'">
+          <td>
+            <span><a href="{{ post.url }}">{{ post.title }}</a></span>
+            <span class="float-right">{{ post.date | date: "%F" }}</span>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 
   <div style="text-align: center">
     <br>
     <div>
-    {% if paginator.total_pages > 1 %}
-    <!-- 分页代码 -->
-    <!-- 上一页  -->
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">上一页</a>
-    {% endif %}
+      {% if paginator.total_pages > 1 %}
+      <!-- 分页代码 -->
+      <!-- 上一页  -->
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">上一页</a>
+      {% endif %}
 
-    <!-- 显示页数 -->
-    {% assign display_page_count = 5 %}
-    {% assign display_page_count_half = 2 %}
-    {% assign minus_display_page_count_half = {{ 0 | plus: paginator.total_pages | minus: display_page_count_half }} %}
-    {% assign display_page_count_minus_one = {{ 0 | plus: display_page_count | minus: 1 }} %}
+      <!-- 显示页数 -->
+      {% assign display_page_count = 5 %}
+      {% assign display_page_count_half = 2 %}
+      {% assign minus_display_page_count_half = {{ 0 | plus: paginator.total_pages | minus: display_page_count_half }} %}
+      {% assign display_page_count_minus_one = {{ 0 | plus: display_page_count | minus: 1 }} %}
 
-    {% assign raw_page_start = {{ 0 | plus: paginator.page |  minus: display_page_count_half }} %}
-    {% assign raw_page_end = {{ 0 | plus: paginator.page | plus: display_page_count_half }} %}
+      {% assign raw_page_start = {{ 0 | plus: paginator.page |  minus: display_page_count_half }} %}
+      {% assign raw_page_end = {{ 0 | plus: paginator.page | plus: display_page_count_half }} %}
 
-    <!-- 显示全部页 -->
-    {% if paginator.total_pages <= display_page_count %}
-    {% assign  page_start = 1 }} %}
-    {% assign  page_end = paginator.total_pages }} %}
-    <!-- 显示部分页 -->
-    {% elsif paginator.page <= display_page_count_half %}
-    {% assign  page_start = 1 }} %}
-    {% assign  page_end = display_page_count }} %}
-    {% elsif paginator.page > minus_display_page_count_half %}
-    {% assign  page_start = {{ 0 | plus: paginator.total_pages | minus: display_page_count_minus_one }} %}
-    {% assign  page_end = paginator.total_pages %}
-    {% else %}
-    {% assign  page_start = raw_page_start %}
-    {% assign  page_end = raw_page_end %}
-    {% endif %}
-    <!-- 显示 -->
-    {% for page in (page_start..page_end) %}
-    {% if page == paginator.page %}
+      <!-- 显示全部页 -->
+      {% if paginator.total_pages <= display_page_count %}
+      {% assign  page_start = 1 }} %}
+      {% assign  page_end = paginator.total_pages }} %}
+      <!-- 显示部分页 -->
+      {% elsif paginator.page <= display_page_count_half %}
+      {% assign  page_start = 1 }} %}
+      {% assign  page_end = display_page_count }} %}
+      {% elsif paginator.page > minus_display_page_count_half %}
+      {% assign  page_start = {{ 0 | plus: paginator.total_pages | minus: display_page_count_minus_one }} %}
+      {% assign  page_end = paginator.total_pages %}
+      {% else %}
+      {% assign  page_start = raw_page_start %}
+      {% assign  page_end = raw_page_end %}
+      {% endif %}
+      <!-- 显示 -->
+      {% for page in (page_start..page_end) %}
+      {% if page == paginator.page %}
       <span class="active">{{ page }}</span>
-    {% elsif page == 1 %}
+      {% elsif page == 1 %}
       <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-    {% else %}
-      <a href="{{ site.paginate_path | prepend: "/" | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-    {% endif %}
-    {% endfor %}
+      {% else %}
+      <a
+        href="{{ site.paginate_path | prepend: "/" | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+      {% endif %}
+      {% endfor %}
 
-    <!-- 下一页 -->
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页</a>
-    {% endif %}
-    {% endif %}
+      <!-- 下一页 -->
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页</a>
+      {% endif %}
+      {% endif %}
+    </div>
+    <div>每页 {{ paginator.per_page }} 篇 共 {{ paginator.total_pages }} 页 {{ paginator.total_posts }} 篇</div>
   </div>
-  <div>每页 {{ paginator.per_page }} 篇 共 {{ paginator.total_pages }} 页 {{ paginator.total_posts }} 篇</div>
-</div>
-  </body>
+</body>
+
 </html>
