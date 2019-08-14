@@ -99,7 +99,7 @@ title: 延迟计算导致假锁
 </p>
 	<p>多线程的方式对集合进行增删查，查采用lambda的延时计算。</p>
 	<p>运行上面的代码会报以下错误：
-	<img src="/Media/images/2018-08-29/collection-has-modified.png" width="660" height="424" alt="集合已被修改"/> </p>
+	<img src="/Media/images/2018-08-29/collection-has-modified.png" width="660" alt="集合已被修改"/> </p>
 <p>延迟加载不应该出锁，出锁了导致这样一个错误。</p>
 	<p>由以上可知，不要在锁中使用延时计算，即使想用这种写法也要在锁内完成计算。</p>
 </body>

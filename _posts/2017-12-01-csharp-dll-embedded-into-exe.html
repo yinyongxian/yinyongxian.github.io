@@ -17,10 +17,10 @@ title: C# dll嵌入到exe
 <p>实现这个功能，只需要下面简单的步骤：</p>
 <h2>dll放进资源文件</h2>
 <p>把dll放进Resources.resx文件中</p>
-<img src="/Media/images/2017-12-01/Resources_resx.png" width="201" height="113" alt=""/>
+<img src="/Media/images/2017-12-01/Resources_resx.png" width="201" alt=""/>
 <h2>设置dll的属性</h2>
 <p>在自动生成的Resources文件夹中设置</p>
-<img src="/Media/images/2017-12-01/Property.png" width="218" height="73" alt=""/>
+<img src="/Media/images/2017-12-01/Property.png" width="218" alt=""/>
 <h2>主函数初始化时，添加如下内容</h2>
 <P>代码</P>
 <pre>AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
