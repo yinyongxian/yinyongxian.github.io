@@ -184,3 +184,7 @@ tr {
 .center {
 	text-align: center;
 }
+
+.delete-line {
+	text-decoration:line-through wavy red;
+}
