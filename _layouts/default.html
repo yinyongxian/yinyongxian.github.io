@@ -1,58 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="尹永贤，清流泉">
-<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>{{ page.title }}</title>
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
-<link rel="apple-touch-icon" href="/Media/images/icons/YYXArticle.png">
-<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
-<link href="/Media/style/main.css" rel="stylesheet" type="text/css">
-<link href="../Media/style/index.css" rel="stylesheet" type="text/css">
-<link href="/Media/style/index.css" rel="stylesheet" type="text/css">
-<script src="../Media/js/jquery.min.js"></script>
-<script src="/Media/js/jquery.min.js"></script>
-<script src="../Media/js/vue.js"></script>
-<script src="/Media/js/vue.js"></script>
-<style type="text/css">
-.btn-pay{
-	display: inline-block;
-	width: 50px;
-	height: 50px;
-	color: #FFF;
-	background-color: #ea6f5a;
-	font-size: 16px;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 50px;
-	margin: 10px 0px;
-}
-</style>
-</head>
-<body>
-<div class="header-wrapper">
-<div id="header">
-  <ul>
-    <li><a href="https://yinyongxian.github.io" >清流泉</a></li>
-    <li><a href="{{ site.baseurl }}/about/2017-07-29-pay.html">打赏</a></li>
-    <li><a href="{{ site.baseurl }}/about/2017-08-05-about.html">关于</a></li>
-    <li><a href="{{ site.baseurl }}/about/2017-08-02-contact.html">联系</a></li>
-    <li><a href="https://github.com/yinyongxian" title="GitHub">GitHub</a></li>
-  </ul>
-</div>
-</div>
-<br>
-<div class="body-content"> {{ content }} </div>
 
-<div style="text-align: center">
-	<img src="{{ site.baseurl }}/Media/images/2017-07-29/reward-code.jpg" alt="Reward Code" width="256px">
-	<a href="{{ site.baseurl }}/about/2017-07-29-pay.html" >
-		<div class="btn-pay">打赏</div>
-	</a>
-</div>
-<script type="text/javascript">
-</script>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="尹永贤，清流泉">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>{{ page.title }}</title>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="/Media/images/icons/YYXArticle.png">
+	<link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+	<link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+	<link href="../Media/style/index.css" rel="stylesheet" type="text/css">
+	<link href="/Media/style/index.css" rel="stylesheet" type="text/css">
+	<script src="../Media/js/jquery.min.js"></script>
+	<script src="/Media/js/jquery.min.js"></script>
+	<script src="../Media/js/vue.js"></script>
+	<script src="/Media/js/vue.js"></script>
+</head>
+
+<body>
+	<div id="header-wrapper" class="header-wrapper">
+		<div id="header">
+			<ul>
+				<li><a href="https://yinyongxian.github.io">清流泉</a></li>
+				<li><a href="{{ site.baseurl }}/about/2017-07-29-pay.html">打赏</a></li>
+				<li><a href="{{ site.baseurl }}/about/2017-08-05-about.html">关于</a></li>
+				<li><a href="{{ site.baseurl }}/about/2017-08-02-contact.html">联系</a></li>
+				<li><a href="https://github.com/yinyongxian" title="GitHub">GitHub</a></li>
+			</ul>
+		</div>
+	</div>
+	<br>
+	<div class="body-content"> {{ content }} </div>
+
+	<div style="text-align: center">
+		<img src="/Media/images/2017-07-29/reward-code.jpg" alt="Reward Code" width="256px">
+		<a href="{{ site.baseurl }}/about/2017-07-29-pay.html">
+			<div class="btn-pay">打赏</div>
+		</a>
+	</div>
 </body>
+
 </html>

@@ -1,21 +1,26 @@
 @charset "UTF-8";
+
 /* CSS Document */
 * {
 	margin: 0px;
 	padding: 0px;
 }
+
 body {
 	font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
+
 P {
 	line-height: 1.8;
 	text-indent: 2em;
 	margin: 16px 0px;
 }
+
 H1 {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
 	text-align: center;
 }
+
 H2 {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
 	margin-bottom: 20px;
@@ -26,6 +31,7 @@ H2 {
 	color: #666666;
 	margin-top: 20px;
 }
+
 H3 {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
 	border-bottom: 1px LightGrey solid;
@@ -36,6 +42,7 @@ H3 {
 	margin-bottom: 20px;
 	margin-left: 2em;
 }
+
 H4 {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
 	margin-top: 20px;
@@ -46,10 +53,12 @@ H4 {
 	line-height: 150%;
 	color: #666666;
 }
+
 .box {
 	padding: 2% 8% 5% 8%;
 	border: 1px solid LightGrey;
 }
+
 pre {
 	font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
 	font-size: 90%;
@@ -57,22 +66,29 @@ pre {
 	background-color: #E6E6FA;
 	line-height: 1.3;
 	padding: 5px;
-	clip: rect(auto,auto,auto,auto);
+	clip: rect(auto, auto, auto, auto);
 	margin-left: 2em;
 	margin-right: 2em;
 }
+
 code {
 	font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
 }
-a:link, a:visited {
-	text-decoration: none;  /*超链接无下划线*/
+
+a:link,
+a:visited {
+	text-decoration: none;
+	/*超链接无下划线*/
 }
+
 a {
 	color: #0070c9;
 }
+
 a:hover {
 	text-decoration: underline;
 }
+
 img {
 	text-align: center;
 	display: block;
@@ -85,39 +101,48 @@ img {
 	webkit-box-shadow: 0 0 10px #555;
 	max-width: 100%;
 }
+
 iframe {
 	max-width: 100%;
 }
+
 hr {
 	color: LightGrey;
 }
+
 p.notice {
 	color: #4876FF;
 	font-size: 14px;
 }
+
 pre {
 	white-space: pre-wrap;
 	word-wrap: break-word;
 }
+
 ul {
 	padding: 0px;
 	margin: 0px;
 }
+
 li {
 	line-height: 1.8;
 	margin: 5px;
 	text-decoration: none;
 }
+
 tr {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis
 }
+
 .datenote {
 	text-align: right;
 	display: inline-block;
 	width: 100%;
 }
+
 #header {
 	background-color: black;
 	color: white;
@@ -127,16 +152,20 @@ tr {
 	position: fixed;
 	z-index: 9999;
 }
+
 #header a {
 	color: white;
 	text-decoration: none;
 }
+
 #header ul {
 	margin-left: 10px;
 }
+
 #header li {
 	display: inline;
 }
+
 #header a:hover {
 	color: lightgray;
 	background-color: black;
@@ -150,12 +179,15 @@ tr {
 .textaligncenter {
 	text-align: center;
 }
+
 .body-content {
 	margin: 0px 10px;
 }
+
 .padding-left-4em {
 	padding-left: 4em;
 }
+
 .font-weight-bold {
 	font-weight: bold;
 }
@@ -165,20 +197,22 @@ tr {
 }
 
 .jump {
-  position: relative;
-  animation: jump 1s linear 0s infinite;
+	position: relative;
+	animation: jump 1s linear 0s infinite;
 }
 
 @keyframes jump {
-  0% {
-    top: 0em;
-  }
-  50% {
-    top: -0.2em;
-  }
-  100% {
-    top: 0em;
-  }
+	0% {
+		top: 0em;
+	}
+
+	50% {
+		top: -0.2em;
+	}
+
+	100% {
+		top: 0em;
+	}
 }
 
 .center {
@@ -186,5 +220,18 @@ tr {
 }
 
 .delete-line {
-	text-decoration:line-through wavy red;
+	text-decoration: line-through wavy red;
+}
+
+.btn-pay {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	color: #FFF;
+	background-color: #ea6f5a;
+	font-size: 16px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 50px;
+	margin: 10px 0px;
 }
