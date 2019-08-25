@@ -142,7 +142,7 @@ tr {
 	background-color: black;
 }
 
-#header-back {
+.header-wrapper, #header-back {
 	width: 100%;
 	height: 40px;
 }

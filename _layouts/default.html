@@ -14,54 +14,9 @@
 <link href="/Media/style/index.css" rel="stylesheet" type="text/css">
 <script src="../Media/js/jquery.min.js"></script>
 <script src="/Media/js/jquery.min.js"></script>
-<!-- <script src="../Media/js/vue.min.js"></script>
-<script src="/Media/js/vue.min.js"></script> -->
 <script src="../Media/js/vue.js"></script>
 <script src="/Media/js/vue.js"></script>
-<script type="text/javascript">
-$(function(){
-	$('#updown').fadeOut(300);
-	$("#updown").css("top", window.screen.availHeight/3-64+"px");
-	$(window).scroll(function() {		
-		if($(window).scrollTop() >= 100){
-			$('#updown').fadeIn(300); 
-		}else{    
-			$('#updown').fadeOut(300);    
-		}  
-	});
-	$('#updown .up').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});
-	$('#updown .down').click(function(){$('html,body').animate({scrollTop:document.body.clientHeight+'px'}, 800);});
-});
-</script>
 <style type="text/css">
-#updown {
-	position: fixed;
-	right: 10px;
-	display: block;
-}
-#updown span {
-	cursor: pointer;
-	width: 64px;
-	height: 64px;
-	display: block;
-}
-#updown .up {
-	background: url(/Media/images/top-bottom/top.png);
-	background-size: contain;
-}
-#updown .up:hover {
-	background: url(/Media/images/top-bottom/top-hover.png);
-	background-size: contain;
-}
-#updown .down {
-	background: url(/Media/images/top-bottom/bottom.png);
-	background-size: contain;
-}
-#updown .down:hover {
-	background: url(/Media/images/top-bottom/bottom-hover.png);
-	background-size: contain;
-}
-
 .btn-pay{
 	display: inline-block;
 	width: 50px;
@@ -77,6 +32,7 @@ $(function(){
 </style>
 </head>
 <body>
+<div class="header-wrapper">
 <div id="header">
   <ul>
     <li><a href="https://yinyongxian.github.io" >清流泉</a></li>
@@ -87,7 +43,7 @@ $(function(){
   </ul>
 </div>
 <div id="header-back"></div>
-<div id="updown"><span class="up"></span><span class="down"></span></div>
+</div>
 <br>
 <div class="body-content"> {{ content }} </div>
 
@@ -97,6 +53,7 @@ $(function(){
 		<div class="btn-pay">打赏</div>
 	</a>
 </div>
-
+<script type="text/javascript">
+</script>
 </body>
 </html>
