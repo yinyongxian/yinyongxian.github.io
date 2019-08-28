@@ -23,7 +23,7 @@ title: 清流泉
   <div id="table">
     <table>
       <tbody>
-        {% for post in site.posts %}
+        {% for post in paginator.posts %}
         <tr onClick="parent.location='{{ post.url }}'; this.style.backgroundColor='#FFFFFF';"
           onMouseOver="this.style.backgroundColor='LightGrey';this.style.cursor='pointer';"
           onMouseOut="this.style.backgroundColor='#FFFFFF'">
