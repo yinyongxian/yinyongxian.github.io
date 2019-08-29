@@ -51,6 +51,14 @@ if (success)
 }</pre>
     <p>优于</p>
     <pre>var value = dictionary[key];</pre>
+    <br>
+    <pre>var result = list.FirstOrDefault();
+if (result != null)
+{
+    //使用result
+}</pre>
+    <p>优于</p>
+    <pre>var result = list.First();</pre>
     <h4>禁止沉默“吃”掉异常</h4>
     <p>如果不对异常处理，要保障异常上抛。像下面这样沉默“吃”掉异常，其中异常引起软件业务逻辑异常不容易定位解决。</p>
     <pre>try
@@ -65,7 +73,31 @@ finally
 {
 
 }</pre>
-<h4>Warning当成Error</h4>
+    <h4>Warning当成Error</h4>
+    <p>在没有把Warning当成Error的代码中，多数存在大量的Warning</p>
+    <ol class="padding-left-4em">
+        <li>可能为空值</li>
+        <li>未使用的变量</li>
+        <li>未使用的方法</li>
+        <li>未使用的类</li>
+        <li>变量命名不规范</li>
+        <li>方法命名不规范</li>
+        <li>多余的命名空间</li>
+        <li>变量同时存在同步和非同步代码块中</li>
+        <li>多余的类型声明</li>
+        <li>可能存在多次枚举</li>
+        <li>一些废弃的旧语法</li>
+        <li>不必要的范型变量</li>
+        <li>不必要的变量初始化</li>
+        <li>不必要的继承</li>
+        <li>冗余的case</li>
+        <li>不必要的类型转译</li>
+        <li>不必要的ToString()</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
     <h2>持续交付</h2>
     <p></p>
     <h2></h2>
