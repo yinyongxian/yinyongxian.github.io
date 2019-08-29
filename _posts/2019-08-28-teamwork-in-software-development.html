@@ -37,20 +37,35 @@ title: 软件开发中的团队协作
     <pre>var success = int.TryParse("1", out number);
 if (success)
 {
-//使用number
+    //使用number
 }</pre>
     <p>优于</p>
     <pre>var number = int.Parse("1");</pre>
-    <p>TryParse失败的时候，可以采用默认值继续执行</p>
-    <h4></h4>
-    <p></p>
-    <h4></h4>
-    <p></p>
-    <h4></h4>
-    <p></p>
-    <h4></h4>
-    <p></p>
+    <p>TryParse失败的时候，可以采用给予默认值继续执行。同时可以通过日志记录或者bug收集工具发送给开发者，及时的解决软件的潜在bug，提高软件的健壮性；Parse失败的时候，就会直接抛异常“System.FormatException:
+        '输入字符串的格式不正确。'”，如果调用者没有适当处理软件就挂掉了。</p>
+    <p>有TryFoo方法的接口尽可能用，避免一些不必要的异常。其他的比如：</p>
+    <pre>var success = dictionary.TryGetValue(key, out value);
+if (success)
+{
+    //使用value
+}</pre>
+    <p>优于</p>
+    <pre>var value = dictionary[key];</pre>
+    <h4>禁止沉默“吃”掉异常</h4>
+    <p>如果不对异常处理，要保障异常上抛。像下面这样沉默“吃”掉异常，其中异常引起软件业务逻辑异常不容易定位解决。</p>
+    <pre>try
+{
 
+}
+catch (Exception)
+{
+    // ignored
+}
+finally
+{
+
+}</pre>
+<h4>Warning当成Error</h4>
     <h2>持续交付</h2>
     <p></p>
     <h2></h2>
