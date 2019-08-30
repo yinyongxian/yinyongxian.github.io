@@ -1,0 +1,104 @@
+---
+layout: default
+title: 求斐波那契数列第n项的值
+---
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>求斐波那契数列第n项的值</title>
+    <link href="../Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1>求斐波那契数列第n项的值</h1>
+<p>这是一道常规的面试题目，以此题目来说明递归可能会增加计算的次数，造成性能浪费。可以把递归转换成循环的方式对递归算法进行优化。</p>
+<h2>求Fibonacci(30)</h2>
+<p>常用来考递归的思考方式，因为递归看起来比循环高那么一点点，可实际上循环才是这道题的最优解法。</p>
+<p>递归写法
+    <pre>public static int FibonacciRecursive(int n)
+{
+    if (n < 1)
+    {
+        throw new Exception("参数必须大于0");
+    }
+
+    if (n == 1 || n == 2)
+    {
+        return 1;
+    }
+
+    return FibonacciRecursive(n - 1) + FibonacciRecursive(n - 2);
+}</pre>
+</p>
+<p>循环写法<pre>public static int FibonacciLoop(int n)
+{
+    if (n < 1)
+    {
+        throw new Exception("参数必须大于0");
+    }
+
+    if (n == 1 || n == 2)
+    {
+        return 1;
+    }
+
+    var x = 1;
+    var y = 1;
+    var result = 0;
+    for (var i = 3; i <= n; i++)
+    {
+        result = x + y;
+        x = y;
+        y = result;
+    }
+
+    return result;
+}</pre></p>
+<pre>Fibonacci(30) = 832040</pre>
+<p>递归调用没有记录中间计算的FibonacciXXX(n)结果，每一次都要重新计算，重复计算造成性能浪费。</p>
+<P>写递归算法的时候，有意识地尝试转换成循环，如有性能优化就进行优化。</P>
+<h2>过度优化</h2>
+<p>有人会将循环写法写成下面形式：<pre>public static int FibonacciLoop(int n)
+{
+    if (n < 1)
+    {
+        throw new Exception("参数必须大于0");
+    }
+
+    var x = 1;
+    var y = 1;
+    var result = 1;
+    for (var i = 3; i <= n; i++)
+    {
+        result = x + y;
+        x = y;
+        y = result;
+    }
+
+    return result;
+}</pre></p>
+<p>代码量的确比原来的代码少了,但是可读性也是降低了。</p>
+<p>更有甚者，优化成下面形式：<pre>public static int FibonacciLoop(int n)
+{
+    if (n < 1)
+    {
+        throw new Exception("参数必须大于0");
+    }
+
+    var x = 1;
+    var y = 1;
+    for (var i = 3; i <= n; i++)
+    {
+        y = x + y;
+        x = y - x;
+    }
+
+    return y;
+}</pre></p>
+<p>这个代码更难理解了，应避免这样的过度优化。</p>
+</body>
+
+</html>
