@@ -55,10 +55,12 @@ if (success)
     <pre>var value = dictionary[key];</pre>
     <br>
     <pre>var result = list.FirstOrDefault();
-if (result != null)
+if (result == null)
 {
-    //使用result
-}</pre>
+    return;
+}
+
+//使用result</pre>
     <p>优于</p>
     <pre>var result = list.First();</pre>
     <h3>禁止沉默“吃”掉异常</h3>
