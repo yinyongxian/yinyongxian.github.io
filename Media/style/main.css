@@ -176,10 +176,6 @@ tr {
 	height: 40px;
 }
 
-.textaligncenter {
-	text-align: center;
-}
-
 .body-content {
 	margin: 0px 10px;
 }
@@ -234,4 +230,8 @@ tr {
 	text-align: center;
 	line-height: 50px;
 	margin: 10px 0px;
+}
+
+.hide{
+	display: none;
 }
