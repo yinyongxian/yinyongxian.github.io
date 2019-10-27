@@ -1,0 +1,62 @@
+---
+layout: default
+title: LINQ解惑
+---
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>LINQ解惑</title>
+    <link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1>LINQ解惑</h1>
+    <p>本文讲的是LINQ的一个不常用的知识，假设你对LINQ比较熟悉。</p>
+    <P>因为不常用，所以这些知识“不太重要”，可能学了也用不到，但是有的人会用这些知识刁难程序员，在别人面前炫耀。程序员何苦为难程序员！知识不过是“闻道有先后，术业有专攻”罢了。</p>
+    <p> 如果两个人相互用自己知识相对另一个人知识的差集相互考对方，无论两个人知识多么渊博，都只会像两个傻子相互找对方的难堪。<img src="/Media/images/2019-10-27/Complement.png"
+            alt="差集"></P>
+    <h2>LINQ Joining</h2>
+    <p>举例:
+        <pre>class User
+{
+    public int UserId { get; set; }
+    public string Name { get; set; }
+}
+</pre>
+        <br>
+        <pre>class UserBasic
+{
+    public int UserId { get; set; }
+    public int Age { get; set; }
+    public string Sex { get; set; }
+}
+</pre>
+        <br>
+        <pre>class UserDetail
+{
+    public int UserId { get; set; }
+    public string Phone { get; set; }
+    public string Address { get; set; }
+}
+</pre>
+        <br>
+        <img src="/Media/images/2019-10-27/linq-Joining.png" alt="源代码">
+    </p>
+    <p>因代码太长，用图片显示，源码请移玉步至<a href="https://github.com/yinyongxian/AptivTest">Github</a></p>
+    <p>输出
+        <pre>2/静流/18/女/18888888888/上海
+3/空流/18/男/NULL/NULL</pre>
+    </p>
+    <P>知识点：
+        <ul class="padding-left-4em">
+            <li>LINQ join的写法， 类似join常在数据库上使用，LINQ中用的比较少。</li>
+            <li>多属性相等，LINQ 没有SQL中AND，需要使用类或者匿名类，匿名类的属性名称要一致。</li>
+            <li>使用DefaultIfEmpty()方法，可以实现左/右连接的效果，需注意空值处理。</li>
+        </ul>
+    </P>
+</body>
+
+</html>
