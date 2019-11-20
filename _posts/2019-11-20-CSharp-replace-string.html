@@ -1,0 +1,61 @@
+---
+layout: default
+title: C# 是否先校验包含字符串再替换
+---
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>C# 是否先校验包含字符串再替换</title>
+    <link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+    <link href="/Media/style/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1>C# 是否先校验包含字符串再替换</h1>
+    <p>在代码中看到有人再替换字符串前，先校验字符串存在再进行替换，觉得效率不高，浪费了一次计算，进行了简单的效率验证。</p>
+    <h2>包含字符串 & 校验</h2>
+    <img src="/Media/images/2019-11-20/include-and-check.png" alt="图片消失">
+    <h2>包含字符串 & 不校验</h2>
+    <img src="/Media/images/2019-11-20/include-and-uncheck.png" alt="图片消失">
+    <h2>不包含字符串 & 校验</h2>
+    <img src="/Media/images/2019-11-20/uninclude-and-check.png" alt="图片消失">
+    <h2>不包含字符串 & 不校验</h2>
+    <img src="/Media/images/2019-11-20/uninclude-and-uncheck.png" alt="图片消失">
+    <h2>测试结果</h2>
+    <div class="col-md-6" style="margin: auto">
+        <table class="table table-bordered table-hover center">
+            <caption class="center">测试结果</caption>
+            <thead>
+                <tr>
+                    <th>测试条件</th>
+                    <th>耗时</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>包含字符串 & 校验</td>
+                    <td>00:00:05.2842240</td>
+                </tr>
+                <tr>
+                    <td>包含字符串 & 不校验</td>
+                    <td>00:00:04.8745234</td>
+                </tr>
+                <tr>
+                    <td>不包含字符串 & 校验</td>
+                    <td>00:00:01.9206545</td>
+                </tr>
+                <tr>
+                    <td>不包含字符串 & 不校验</td>
+                    <td>00:00:02.9747488</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h2>总结</h2>
+    <p>如果预期待替换的字符串大多数不包含要替换的子字符串，“不包含字符串 & 校验”的确是最优解；如果预期待替换的字符串绝大多数包含要替换的子字符串，不校验更佳一点点。</p>
+</body>
+
+</html>
