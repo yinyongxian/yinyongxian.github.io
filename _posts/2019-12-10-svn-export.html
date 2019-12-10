@@ -1,0 +1,34 @@
+---
+layout: default
+title: SVN Export 操作
+---
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SVN Export 操作</title>
+    <link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+    <link href="/Media/style/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1>SVN Export 操作</h1>
+    <p>软件工程师对代码变更后提交代码到代码库，需要进行Pull Request，以便项目维护者后续进行Code Review、讨论、修改、合并到代码仓库。当不便于进行Pull
+        Request时，代码变更不能直接提交到SVN代码库，因为直接提交到可能会破坏软件的持续交付。可以使用Export操作，把变更的所有代码文件导出到一个包含工程目录相对路径的文件夹，然后把文件夹发送给项目维护者。</p>
+
+    <p>
+        步骤如下：</p>
+    <p>
+        本地代码库右键 -> SVN Commit
+        <img src="/Media/images/2019-12-10/svn-commit.png" alt="SVN Commit">
+    </p>
+    <p>
+        选择修改文件 -> Export，导出到文件夹
+        <img src="/Media/images/2019-12-10/svn-export.png" alt="SVN Export">
+    </p>
+    <p>项目维护者收到文件夹之后，把文件夹和其本地代码库按目录合并，便可以在其本地进行Code Review，调试运行等，确认代码没问题后，再让软件工程师提交到SVN。</p>
+</body>
+
+</html>
