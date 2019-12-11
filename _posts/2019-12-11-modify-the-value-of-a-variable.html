@@ -1,0 +1,28 @@
+---
+layout: default
+title: Visual Studio断点调试时修改变量的值
+---
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Visual Studio断点调试时修改变量的值</title>
+    <link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+    <link href="/Media/style/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1>Visual Studio断点调试时修改变量的值</h1>
+    <p>Visual Studio断点调试的时候，有时候想要修改变量的值，以执行不同的代码流程。</p>
+    <p>方式一：停止调试，变更代码，编译后重新运行。这种调试方式比较繁琐，项目越大耗时越多，可能还要进行一系列的操作才能执行到代码断点处。</p>
+    <p>方法二：拖动断点光标，可以强制变更下一句执行的代码，但是变量的值可能不符合预期，比如下面的代码会打印出“Failed:True”。
+        <img src="/Media/images/2019-12-11/draw-the-arrow.gif" alt="draw the arrow">
+    </p>
+    <p>方法三：查看变量提示框中修改变量的值，改变代码的执行流程。这个方法太好用了，方便、快速、参数值符合预期。
+        <img src="/Media/images/2019-12-11/modify-the-value.gif" alt="draw the arrow">
+    </p>
+</body>
+
+</html>
