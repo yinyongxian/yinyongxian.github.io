@@ -1,0 +1,29 @@
+---
+layout: default
+title: Visual Studio异常中断
+---
+
+<!doctype html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <title>Visual Studio异常中断</title>
+        <link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+        <link href="/Media/style/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+        <h1>Visual Studio异常中断</h1>
+        <p>Visual Studio运行代码时，当代码被try代码块包裹的时候，异常中断会停留在catch内。如果是调用接口，就只能知道有地错了，但是具体哪个地方的代码错了不知道，bug不容易定位。<img
+                        src="/Media/images/2019-12-13/break-in-catch.gif" alt="break in catch"></p>
+        <p>可以通过注释掉try代码，让异常中断在具体代码行。修正代码后，注释还要改回去，比较繁琐，还存在注释未取消，造成异常未被捕获，软件直接挂掉的风险。<img
+                        src="/Media/images/2019-12-13/comment-try-catch.gif" alt="comment try catch">
+        </p>
+        <p>还可以采用条件编译#if ... #endif，实现Debug时抛异常，Release版本代码运行在try代码块内。</p>
+        <p>最终发现Visual Studio可以配置（相见恨晚），使得在try代码块中的代码可以直接异常中断在具体代码行。<img
+                        src="/Media/images/2019-12-13/break-when-thrown.gif" alt="break when thrown">
+        </p>
+</body>
+
+</html>
