@@ -1,0 +1,38 @@
+---
+layout: default
+title: 诡异的继承
+---
+
+<!doctype html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <title>诡异的继承</title>
+        <link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+                img {
+                        text-align: left;
+                        margin-left: 2em;
+                }
+        </style>
+</head>
+
+<body>
+        <h1>诡异的继承</h1>
+        <p>一个存储类，基类封装了一个Dictionary用来存储数据，有SetValue和GetValuel两个方法。
+        </p>
+        <p>如下:
+                <div>
+                        <img src="/Media/images/2020-02-24/IStorage.png" alt="IStorage">
+                        <img src="/Media/images/2020-02-24/Storage.png" alt="Storage">
+                        <img src="/Media/images/2020-02-24/SpecificStorage.png" alt="SpecificStorage">
+                        <img src="/Media/images/2020-02-24/Program.png" alt="Program">
+                </div>
+        </p>
+        <p>类override了基类的GetValue方法，让某些特定的Key值总是返回固定的结果，其他Key值返回正常设置的结果。</p>
+        <p>这造成了很大迷惑，对于特定的Key值，无论设置什么值，设置的值虽然会存储到Dictionary，但是返回的值总是固定的返回值。
+                调试的时候查看Dictionary内存储的值也是对的，可就是获取的值总是错的。一切都是正常的用法，可理解起来就是那么诡异。</p>
+</body>
+
+</html>
