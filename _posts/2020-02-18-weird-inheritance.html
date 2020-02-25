@@ -31,8 +31,11 @@ title: 诡异的继承
                 </div>
         </p>
         <p>类override了基类的GetValue方法，让某些特定的Key值总是返回固定的结果，其他Key值返回正常设置的结果。</p>
-        <p>这造成了很大迷惑，对于特定的Key值，无论设置什么值，设置的值虽然会存储到Dictionary，但是返回的值总是固定的返回值。
-                调试的时候查看Dictionary内存储的值也是对的，可就是获取的值总是错的。一切都是正常的用法，可理解起来就是那么诡异。</p>
+        <p>这造成了很大迷惑，对于特定的Key值，无论设置什么值，设置的值虽然会存储到Dictionary，但是返回的值总是固定的返回值。调试的时候查看Dictionary内存储的值也是对的，可就是获取的值总是错的。
+        </p>
+        <p>一切都是正常的用法，可理解起来就是那么诡异。</p>
+        <h2>源代码</h2>
+        <p> <a href="https://github.com/yinyongxian/YYX.WeirdInheritance">下载</a> </p>
 </body>
 
 </html>
