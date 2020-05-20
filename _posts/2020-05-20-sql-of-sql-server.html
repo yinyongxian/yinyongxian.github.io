@@ -26,6 +26,21 @@ title: SQL Of SqlServer
     <p>部分列数据。一些列需要根据限定条件设置默认值。
     <pre>insert into DatabaseName_Backup.dbo.A_Backup(Number) SELECT Number FROM DatabaseName.dbo.A</pre>
     </p>
+    <h2>根据表的行数执行操作</h2>
+    <p><pre>BEGIN TRANSACTION;  
+DECLARE @rowCounter integer
+SELECT @rowCounter = COUNT(1) FROM DatabaseName.dbo.A_Backup
+PRINT @rowCounter
+IF @rowCounter > 0
+BEGIN
+	PRINT 'ROLLBACK';
+	ROLLBACK TRANSACTION;
+END
+ELSE
+BEGIN
+	PRINT 'COMMIT'
+	COMMIT TRANSACTION
+END</pre></p>
 </body>
 
 </html>
