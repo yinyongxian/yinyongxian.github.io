@@ -5,17 +5,27 @@ title: SQL Of SqlServer
 
 <!doctype html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>SQL Of SqlServer</title>
-<link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <title>SQL Of SqlServer</title>
+    <link href="/Media/style/main.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-<h1>SQL Of SqlServer</h1>
-<p>记录一些常用的sql语句。</p>
-<h2>整表导入新表备份</h2>
-<p>要插入的表不能已存在。<pre>select * into DatabaseName.dbo.A_Backup from DatabaseName.dbo.A</pre></p>
-<h2>一个表的数据导入另一张表</h2>
-<p><pre>insert into DatabaseName_Backup.dbo.A_Backup select * from DatabaseName.dbo.A</pre></p>
+    <h1>SQL Of SqlServer</h1>
+    <p>记录一些常用的sql语句。</p>
+    <h2>整表导入新表备份</h2>
+    <p>要插入的表不能已存在。
+    <pre>select * into DatabaseName.dbo.A_Backup from DatabaseName.dbo.A</pre>
+    </p>
+    <h2>一个表的数据导入另一张表</h2>
+    <p>全部列数据。
+    <pre>insert into DatabaseName_Backup.dbo.A_Backup select * from DatabaseName.dbo.A</pre>
+    </p>
+    <p>部分列数据。一些列需要根据限定条件设置默认值。
+    <pre>insert into DatabaseName_Backup.dbo.A_Backup(Number) SELECT Number FROM DatabaseName.dbo.A</pre>
+    </p>
 </body>
+
 </html>
