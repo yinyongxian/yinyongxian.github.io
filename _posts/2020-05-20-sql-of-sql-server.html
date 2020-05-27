@@ -51,6 +51,12 @@ END</pre>
     <p>
     <pre>SELECT * FROM sys.columns WHERE object_id=object_id('DatabaseName.dbo.A')</pre>
     </p>
+    <h2>批量插入时每行数字增加1</h2>
+    <p>
+    <pre>ROW_NUMBER() OVER(ORDER BY (SELECT NULL))</pre>
+    </p>
+    <h2>游标</h2>
+    <p>游标就是foreach，由SQL这种低级脚本语言编写非常繁琐，浪费了无数人的时间，掉了好多头发。站在现在的角度，当初设计SQL的人就像小丑一样造了一个这么难用的破玩意儿。</p>
 
 </body>
 
