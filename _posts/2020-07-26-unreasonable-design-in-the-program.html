@@ -1,0 +1,27 @@
+---
+layout: default
+title: 程序中存在不合理的设计
+---
+
+<!doctype html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <title>程序中存在不合理的设计</title>
+        <link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+        <h1>程序中存在不合理的设计</h1>
+        <p>程序中存在不合理的设计，随着时间推移更可能慢慢增多，或许是增加功能时，因为早期的设计扩展性不好；或许是开发人员更替，因为新开发人员对原来的设计理解不够，仅仅为了实现新功能而随意地添加了一些不合适代码等等。</p>
+        <p>比如数据初始化：
+                <pre>double quantityDouble  = 0d;
+decimal quantityDecimal  = 0m;</pre>
+
+        </p>
+        <p>double和decimal的首字母都是d，在初始化时不能都以d结尾，所以某个开发人员就用了m做为decimal类型初始化的结尾，这看起来很不合理，只是他找不到一个更合适的符号结尾。这导致很多开发人员不知道怎么初始化一个decimal类型的，通常会写成<pre>(decimal)0</pre></p>
+        <p>这样写也是更好记，其他类型也可以用这样的强制转换，不用记着每一个类型初始化时必须以特定的字母结尾。</p>
+</body>
+
+</html>
