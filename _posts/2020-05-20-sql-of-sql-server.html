@@ -20,10 +20,12 @@ title: SQL Of SqlServer
 from syscolumns a left join sys.tables  b 
 on a.id= b.object_id 
 where a.name ='ColumnName'</pre></p>
-    <h2>整表导入新表备份</h2>
+    <h2>整表导入新表备份和还原</h2>
     <p>要插入的表不能已存在。
     <pre>select * into DatabaseName.dbo.A_Backup from DatabaseName.dbo.A</pre>
     </p>
+    <p>还原，要保证所有列的列名和顺序和类型是一致的，否则要指定具体的对应关系
+        <pre>INSERT INTO DatabaseName.dbo.A SELECT * FROM DatabaseName_Backup.dbo.A_Backup</pre></p>
     <h2>一个表的数据导入另一张表</h2>
     <p>全部列数据。
     <pre>insert into DatabaseName_Backup.dbo.A_Backup select * from DatabaseName.dbo.A</pre>
