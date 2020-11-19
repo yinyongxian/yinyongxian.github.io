@@ -5,69 +5,73 @@ title: C# 开发常用工具
 
 <!doctype html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>C# 开发常用工具</title>
-<link href="/Media/style/main.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-ol {
-	padding-left: 4em;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>C# 开发常用工具</title>
+  <link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    ol {
+      padding-left: 4em;
+    }
+  </style>
 </head>
+
 <body>
-<h1>C# 开发常用工具</h1>
-<p>工欲善其事，必先利其器。</p>
-<p>一个好的工匠，应该有一套好的工具，并熟练使用。工具用的好，可以很大地提高做事效率。下面一些我在开发中常用的工具。</p>
-<h2>Visual Studio IDE 集成开发环境</h2>
-<p>Visual Studio号称宇宙最强IDE, 功能十分强大。推荐使用最新版本，新版本有更多好用的功能。</p>
-<p>安装Visual Studio的内容需根据需要选择性安装，安装多了也没用。</p>
-<p>功能比较多，需要花一些时间学习基本的操作、调试方法等，更进一步需使用常用快捷键，提高做事效率。</p>
-<ol>
-  <li>代码片段（Code Snippets），把常用的代码做成代码片段，可以快速插入大量的代码，代码的格式也相对统一。</li>
-</ol>
-<h2>ReSharper</h2>
-<p>ReSharper是Visual Studio一个功能强大的插件，可以几倍甚至几十倍地提高开发效率，让Visual Studio如虎添翼。</p>
-<p>初学者不建议上来就使用该工具，其强大的智能提示会让人忘记基本的语法。当你对编程语言的语法及基本的使用方式相当熟悉之后，再使用该插件可极大提高做事效率。</p>
-<p><a href="http://idea.congm.in/">注册码</a></p>
-<h2>ILSpy</h2>
-<p>ILSpy反编译软件,可以查看现有软件或者代码库的源代码。当你不理解某个类/方法,或者想查看库代码/三方代码的时候，非常有用。</p>
-<h2>打包工具 NSIS</h2>
-<p>NSIS是功能齐全、开源、免费的打包工具。其脚本语言需要花些时间学习，配合NSIS Dialog Designer能设计出精美的安装界面。</p>
-<p>很多软件使用该工具生成安装包。</p>
-<h2>自动集成编译CruiseControl.NET</h2>
-<p>自动集成编译，简化了开发者工作，有更多的时间去关注产品功能以及功能的实现。</p>
-<p>配置文件可以网上搜索，按需配置。</p>
-<p>下面常用的两种方式：</p>
-<ol>
-  <li>间隔一定时间（例如10分钟），检查有新提交就执行编译，如果编译失败，就向开发者发送编译失败及原因的邮件。</li>
-  <li>设定一周的某几天的具体时间，生成安装包并上传到代码库。</li>
-</ol>
-<h2>批处理</h2>
-<p>批处理是一个十分强大的脚本，可以简化很多重复性的工作。</p>
-<p>例如：CruiseControl.NET下载最新代码，Visual Studio进行编译，批处理调用NSIS打包，批处理上传到代码库的安装包位置。一切自动执行，大大减少出错的概率，长期自动集成编译。</p>
-<h2>Windows Performance Toolkit</h2>
-<p>Windows Performance Toolkit是用来分析软件性能瓶颈。使用的工具有Windows Performance Recorder和 Windows Performance Analyzer。可查看具体函数的CPU占用率。</p>
-<p>Windows Performance Recorder获取系统一段时间（一般只需记录10S左右）内的性能记录，供Windows Performance Analyzer进行分析。</p>
-<p>Windows Performance Analyzer可以精确查看某个程序内的某个函数，在所记录时间内使用资源的比率，以此可以确定软件的具体瓶颈，进行软件性能优化。</p>
-<h2>.NET Memory Profiler</h2>
-<p>软件的内存溢出是开发中常有的事情。</p>
-<p>可用.NET Memory Profiler查看程序中对象的内存大小，进行性能优化和内存溢出排查。</p>
-<h2>Navicat for MySQL</h2>
-<p>MySQL数据库工具，数据库的操作很全面，操作也十分得劲。</p>
-<h2>Neor Profile SQL</h2>
-<p>可以设置程序的MySQL数据库连接先连接到Neor Profile SQL，由Neor Profile SQL再进行MySQL数据库操作。</p>
-<p>Neor Profile SQL可以详细显示程序数据库操作，发现数据库瓶颈以进行数据库操作的优化。</p>
-<h2>Wireshark</h2>
-<p>抓取网络数据包，进行数据包分析。</p>
-<p>数据包的筛选条件需要掌握，花时间学习下那些脚本的语法及常用筛选条件，可以快速定位到指定数据包。</p>
-<h2>Colasoft Packet Builder</h2>
-<p>数据包发送工具。</p>
-<p>Wireshark抓到的指定数据包，可以用Colasoft Packet Builder修改数据包的具体参数，重复发送。</p>
-<p>请自觉用在正途，勿用于歪门邪道。</p>
-<h2>ScreenToGif</h2>
-<p>录屏转成Gif工具，写软件操作说明文档十分有效。</p>
-<h2>Snipaste</h2>
-<p>贴图工具，可以截取窗口上的元素，十分高效。截图、贴图、注释、取色等。专业的工具比通用的工具更高效。</p>
-</body
+  <h1>C# 开发常用工具</h1>
+  <p>工欲善其事，必先利其器。</p>
+  <p>一个好的工匠，应该有一套好的工具，并熟练使用。工具用的好，可以很大地提高做事效率。下面一些我在开发中常用的工具。</p>
+  <h2>Visual Studio IDE 集成开发环境</h2>
+  <p>Visual Studio号称宇宙最强IDE, 功能十分强大。推荐使用最新版本，新版本有更多好用的功能。</p>
+  <p>安装Visual Studio的内容需根据需要选择性安装，安装多了也没用。</p>
+  <p>功能比较多，需要花一些时间学习基本的操作、调试方法等，更进一步需使用常用快捷键，提高做事效率。</p>
+  <ol>
+    <li>代码片段（Code Snippets），把常用的代码做成代码片段，可以快速插入大量的代码，代码的格式也相对统一。</li>
+  </ol>
+  <h2>ReSharper</h2>
+  <p>ReSharper是Visual Studio一个功能强大的插件，可以几倍甚至几十倍地提高开发效率，让Visual Studio如虎添翼。</p>
+  <p>初学者不建议上来就使用该工具，其强大的智能提示会让人忘记基本的语法。当你对编程语言的语法及基本的使用方式相当熟悉之后，再使用该插件可极大提高做事效率。</p>
+  <p><a href="http://idea.congm.in/">注册码</a></p>
+  <h2>ILSpy</h2>
+  <p>ILSpy反编译软件,可以查看现有软件或者代码库的源代码。当你不理解某个类/方法,或者想查看库代码/三方代码的时候，非常有用。</p>
+  <h2>打包工具 NSIS</h2>
+  <p>NSIS是功能齐全、开源、免费的打包工具。其脚本语言需要花些时间学习，配合NSIS Dialog Designer能设计出精美的安装界面。</p>
+  <p>很多软件使用该工具生成安装包。</p>
+  <h2>自动集成编译CruiseControl.NET</h2>
+  <p>自动集成编译，简化了开发者工作，有更多的时间去关注产品功能以及功能的实现。</p>
+  <p>配置文件可以网上搜索，按需配置。</p>
+  <p>下面常用的两种方式：</p>
+  <ol>
+    <li>间隔一定时间（例如10分钟），检查有新提交就执行编译，如果编译失败，就向开发者发送编译失败及原因的邮件。</li>
+    <li>设定一周的某几天的具体时间，生成安装包并上传到代码库。</li>
+  </ol>
+  <h2>批处理</h2>
+  <p>批处理是一个十分强大的脚本，可以简化很多重复性的工作。</p>
+  <p>例如：CruiseControl.NET下载最新代码，Visual Studio进行编译，批处理调用NSIS打包，批处理上传到代码库的安装包位置。一切自动执行，大大减少出错的概率，长期自动集成编译。</p>
+  <h2>Windows Performance Toolkit</h2>
+  <p>Windows Performance Toolkit是用来分析软件性能瓶颈。使用的工具有Windows Performance Recorder和 Windows Performance
+    Analyzer。可查看具体函数的CPU占用率。</p>
+  <p>Windows Performance Recorder获取系统一段时间（一般只需记录10S左右）内的性能记录，供Windows Performance Analyzer进行分析。</p>
+  <p>Windows Performance Analyzer可以精确查看某个程序内的某个函数，在所记录时间内使用资源的比率，以此可以确定软件的具体瓶颈，进行软件性能优化。</p>
+  <h2>.NET Memory Profiler</h2>
+  <p>软件的内存溢出是开发中常有的事情。</p>
+  <p>可用.NET Memory Profiler查看程序中对象的内存大小，进行性能优化和内存溢出排查。</p>
+  <h2>Navicat for MySQL</h2>
+  <p>MySQL数据库工具，数据库的操作很全面，操作也十分得劲。</p>
+  <h2>Neor Profile SQL</h2>
+  <p>可以设置程序的MySQL数据库连接先连接到Neor Profile SQL，由Neor Profile SQL再进行MySQL数据库操作。</p>
+  <p>Neor Profile SQL可以详细显示程序数据库操作，发现数据库瓶颈以进行数据库操作的优化。</p>
+  <h2>Wireshark</h2>
+  <p>抓取网络数据包，进行数据包分析。</p>
+  <p>数据包的筛选条件需要掌握，花时间学习下那些脚本的语法及常用筛选条件，可以快速定位到指定数据包。</p>
+  <h2>Colasoft Packet Builder</h2>
+  <p>数据包发送工具。</p>
+  <p>Wireshark抓到的指定数据包，可以用Colasoft Packet Builder修改数据包的具体参数，重复发送。</p>
+  <p>请自觉用在正途，勿用于歪门邪道。</p>
+  <h2>ScreenToGif</h2>
+  <p>录屏转成Gif工具，写软件操作说明文档十分有效。</p>
+  <h2>Snipaste</h2>
+  <p>贴图工具，可以截取窗口上的元素，十分高效。截图、贴图、注释、取色等。专业的工具比通用的工具更高效。</p>
+</body>
+
 </html>
