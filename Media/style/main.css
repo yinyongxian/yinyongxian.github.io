@@ -125,6 +125,11 @@ ul {
 	margin: 0px;
 }
 
+ol {
+	padding: 0px;
+	margin: 0px;
+}
+
 li {
 	line-height: 1.8;
 	margin: 5px;
