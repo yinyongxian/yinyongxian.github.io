@@ -15,9 +15,13 @@ title: C#中看似没用的引用
 
 <body>
         <h1>C#中看似没用的引用</h1>
-        <p>C#新建文件时会有几个常用的引用，因为有的饮用在代码中没有用到，就随手删除了。</p>
+        <p>C#新建文件时会有几个常用的引用，因为有的引用在代码中没有用到，就随手删除了。</p>
         <p>在调试代码时，有时候想调用一些方法，由于没有引用命名空间，不能在监控中写代码执行得到想要的结果。</p>
-        <p>例如：不引用System.Linq，就不能对List进行lambda筛选结果。</p>
+        <p>例如：不引用System.Linq，就不能对List进行lambda筛选结果。
+                <img src="/Media/images/2021-01-20/unusing-system-linq.png" alt="unusing System.linq">
+                <br>
+                <img src="/Media/images/2021-01-20/using-system-linq.png" alt="using System.linq">
+        </p>
 </body>
 
 </html>
