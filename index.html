@@ -27,10 +27,10 @@ title: 清流泉
         <tr onClick="parent.location='{{ post.url }}'; this.style.backgroundColor='#FFFFFF';"
           onMouseOver="this.style.backgroundColor='LightGrey';this.style.cursor='pointer';"
           onMouseOut="this.style.backgroundColor='#FFFFFF'">
-          <td style="width: 50%;text-align: right; padding-right: 10px;">
+          <td style="width: 61.8%;text-align: right; padding-right: 10px;text-overflow: ellipsis;">
             <span><a href="{{ post.url }}">{{ post.title }}</a></span>
           </td>
-          <td style="border-left: 3px solid; text-align: left; padding-left: 10px;">
+          <td style="border-left: 3px solid; text-align: left; padding-left: 10px;text-overflow: ellipsis;">
             <span>{{ post.date | date: "%F" }}</span>
           </td>
         </tr>
