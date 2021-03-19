@@ -23,6 +23,16 @@ title: 访问GitHub
                 <img src="/Media/images/2021/2021-03-19/github-ipaddress.png" alt="GitHub Ipaddress">
         <pre>140.82.113.4 https://github.com</pre>
         </p>
+
+        <p>如果Push的时候报错。执行下面明命令：</p>
+
+        <p>错误
+        <pre>fatal: unable to access '*': schannel: failed to receive handshake, SSL/TLS connection failed</pre>
+        </p>
+        <p>命令
+        <pre>git config --global http.sslBackend "openssl"</pre>
+        </p>
+
 </body>
 
 </html>
