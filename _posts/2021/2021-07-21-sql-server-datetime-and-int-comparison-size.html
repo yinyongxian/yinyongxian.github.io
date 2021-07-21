@@ -1,0 +1,33 @@
+---
+layout: default
+title: SQL Server datetime 和 int 比较大小
+---
+
+<!doctype html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <title>SQL Server datetime 和 int 比较大小</title>
+        <link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+        <h1>SQL Server datetime 和 int 比较大小</h1>
+        <p>参数化查询时，SQL Server会默认对数据类型进行转换，转成对应的结果后再进行比较。</p>
+        <p> 整数转成日期：
+        <pre>declare @i int
+set @i = 0
+SELECT CAST(@i as datetime)</pre>
+        <img src="/Media/images/2021/2021-07-21/int2datetime.png" alt="">
+        </p>
+        <p>日期转成整数（距1900-01-01的天数）：
+        <pre>declare @d datetime
+set @d = '2021-07-21 00:00:00'
+SELECT CAST(@d as int)</pre>
+        <img src="/Media/images/2021/2021-07-21/datetime2int.png" alt="">
+
+        </p>
+</body>
+
+</html>
