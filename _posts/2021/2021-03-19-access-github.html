@@ -27,11 +27,17 @@ title: 访问GitHub
         </p>
         <h2>Push</h2>
         <p>如果Push的时候报下面的错，执行下面明命令：</p>
-        <p>错误
+        <p>错误 1:
         <pre>fatal: unable to access '*': schannel: failed to receive handshake, SSL/TLS connection failed</pre>
         </p>
         <p>命令
         <pre>git config --global http.sslBackend "openssl"</pre>
+        </p>
+        <p>错误 2:
+        <pre>OpenSSL SSL_read: Connection was reset, errno 10054</pre>
+        </p>
+        <p>命令
+        <pre>git init</pre>
         </p>
 
 </body>
