@@ -16,16 +16,19 @@ title: SQL Of SqlServer
     <h1>SQL Of SqlServer</h1>
     <p>记录一些常用的sql语句。</p>
     <h2>查询指定列的所有表名</h2>
-    <p><pre>select b.name as 表名, a.name as 列名 
+    <p>
+    <pre>select b.name as 表名, a.name as 列名 
 from syscolumns a left join sys.tables  b 
 on a.id= b.object_id 
-where a.name ='ColumnName'</pre></p>
+where a.name ='ColumnName'</pre>
+    </p>
     <h2>整表导入新表备份和还原</h2>
     <p>要插入的表不能已存在。
     <pre>select * into DatabaseName.dbo.A_Backup from DatabaseName.dbo.A</pre>
     </p>
     <p>还原，要保证所有列的列名和顺序和类型是一致的，否则要指定具体的对应关系
-        <pre>INSERT INTO DatabaseName.dbo.A SELECT * FROM DatabaseName_Backup.dbo.A_Backup</pre></p>
+    <pre>INSERT INTO DatabaseName.dbo.A SELECT * FROM DatabaseName_Backup.dbo.A_Backup</pre>
+    </p>
     <h2>一个表的数据导入另一张表</h2>
     <p>全部列数据。
     <pre>insert into DatabaseName_Backup.dbo.A_Backup select * from DatabaseName.dbo.A</pre>
@@ -62,9 +65,11 @@ END</pre>
     <p>
     <pre>ROW_NUMBER() OVER(ORDER BY (SELECT NULL))</pre>
     </p>
+    <h2>查看存储过程</h2>
+    <p><pre>sp_helptext</pre></p>
     <h2>游标</h2>
     <p>游标就是foreach，由SQL这种低级脚本语言编写非常繁琐，浪费了无数人的时间，掉了好多头发。站在现在的角度，当初设计SQL的人就像小丑一样造了一个这么难用的破玩意儿。</p>
-    
+
 </body>
 
 </html>
