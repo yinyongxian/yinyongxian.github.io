@@ -26,7 +26,7 @@ title: 清流泉
         {% for post in paginator.posts %}
         <tr onClick="parent.location='{{ post.url }}'; this.style.backgroundColor='#FFFFFF';"
           onMouseOver="this.style.backgroundColor='LightGrey';this.style.cursor='pointer';"
-          onMouseOut="this.style.backgroundColor='#0066cc'">
+          onMouseOut="this.style.backgroundColor='#FFFFFF'">
           <td style="width: 100%; text-align: left; padding-right: 10px; text-overflow: ellipsis;overflow: hidden;">
             <div style="margin: auto;">
               <span><a id="post" href="{{ post.url }}">{{ post.title }}</a></span>
