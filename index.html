@@ -21,6 +21,18 @@ title: 清流泉
       text-align: center;
       margin: auto;
     }
+
+    #post {
+      color: #0066cc;
+    }
+
+    #post-time {
+      line-height: normal;
+      text-align: left;
+      width: 100%;
+      color: #252424;
+      font-size: small;
+    }
   </style>
 </head>
 
@@ -33,14 +45,12 @@ title: 清流泉
         {% for post in paginator.posts %}
         <tr onClick="parent.location='{{ post.url }}'; this.style.backgroundColor='#FFFFFF';"
           onMouseOver="this.style.backgroundColor='LightGrey';this.style.cursor='pointer';"
-          onMouseOut="this.style.backgroundColor='#FFFFFF'">
+          onMouseOut="this.style.backgroundColor='##0066cc'">
           <td style="width: 100%; text-align: left; padding-right: 10px; text-overflow: ellipsis;overflow: hidden;">
             <div style="margin: auto;">
-              <span><a href="{{ post.url }}">{{ post.title }}</a></span>
+              <span><a id="post" href="{{ post.url }}">{{ post.title }}</a></span>
               <br>
-              <span
-                style="text-align: left; margin-left: 10px;width: 100%; float: right; color: #959595;font-size: small;">{{
-                post.date | date: "%F" }}</span>
+              <span id="post-time">{{ post.date | date: "%F" }}</span>
             </div>
           </td>
         </tr>
