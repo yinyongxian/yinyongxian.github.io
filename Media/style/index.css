@@ -13,10 +13,7 @@
 .float-right {
 	float: right
 }
-table {
-	width: 100%;
-	border-collapse: collapse;
-}
+
 td {
 	border-left: none;
 	border-right: none;
@@ -29,6 +26,23 @@ tr {
 span {
 	line-height: 26px;
 }
+
 #table {
-	margin: 0px;
+	width: 100%;
+	border-collapse: collapse;
+	max-width: 800px;
+	text-align: center;
+	margin: auto;
+}
+
+#post {
+	color: #0066cc;
+}
+
+#post-time {
+	line-height: 100%;
+	text-align: left;
+	width: 100%;
+	color: #959595;
+	font-size: small;
 }
