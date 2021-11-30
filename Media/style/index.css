@@ -14,22 +14,27 @@
 	float: right
 }
 
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+tr {
+	border-top: 1px solid #EEE0E5;
+	border-bottom: 1px solid #EEE0E5;
+}
+
 td {
 	border-left: none;
 	border-right: none;
 	vertical-align: middle;
 }
-tr {
-	border-top: 1px solid #EEE0E5;
-	border-bottom: 1px solid #EEE0E5;
-}
+
 span {
 	line-height: 26px;
 }
 
 #table {
-	width: 100%;
-	border-collapse: collapse;
 	max-width: 800px;
 	text-align: center;
 	margin: auto;
