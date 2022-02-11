@@ -10,5 +10,5 @@ title: SQL Server Default Database
 ```SQL
 DECLARE @loginText nvarchar(256)
 SELECT @loginText = SUSER_NAME()
-EXEC sp_defaultdb  @loginame =  @loginText , @defdb =  'TCM910'
+EXEC sp_defaultdb  @loginame =  @loginText , @defdb =  'DataBaseName'
 ```
