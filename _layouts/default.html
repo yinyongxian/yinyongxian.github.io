@@ -10,7 +10,6 @@
 	<link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" href="/Media/images/icons/YYXArticle.png">
 	<link href="/Media/style/main.css" rel="stylesheet" type="text/css">
-	<link href="/Media/style/main.css" rel="stylesheet" type="text/css">
 	<link href="/Media/style/index.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -25,6 +24,12 @@
 				<li><a href="https://github.com/yinyongxian" title="GitHub">GitHub</a></li>
 			</ul>
 		</div>
+		<div class="container">
+			<div class="well" id="searchbox">
+				<input id="search-field" placeholder="Search the Site" />
+				<ul id="results"></ul>
+			</div>
+		</div>
 	</div>
 	<br>
 	<div class="body-content"> {{ content }} </div>
@@ -36,5 +41,14 @@
 		</a>
 	</div>
 </body>
+
+<script src="/Media/style/js/jquery.camelhunter.min.js"></script>
+<script type="text/javascript">
+	$("#search-field").camelHunter({
+		onKeyUp: true,
+		rss: "/search.xml",
+		results: "#results"
+	});
+</script>
 
 </html>
