@@ -1,6 +1,6 @@
 ---
 layout: default
-title: C# is
+title: 杜绝报复社会
 ---
 
 # 杜绝报复社会
