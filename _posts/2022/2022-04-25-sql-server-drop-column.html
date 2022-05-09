@@ -16,7 +16,8 @@ title: SQL Server 删除列
 <body>
         <h1>SQL Server 删除列</h1>
         <p>删除时需要确保表和列存在，如果有限制先删除限制再删除列。</p>
-        <p><pre>IF EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID(N'TableName') AND NAME = N'ColumnName')
+        <p>
+        <pre>IF EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID(N'TableName') AND NAME = N'ColumnName')
 BEGIN    
     DECLARE @CONS_NAME sysname;
     SELECT  @CONS_NAME = OBJECT_NAME(default_object_id)
@@ -27,7 +28,11 @@ BEGIN
             EXEC ('ALTER TABLE TableName DROP CONSTRAINT ' + @CONS_NAME);
         END
 	Alter Table TableName DROP COLUMN ColumnName;
-END</pre></p>
+END</pre>
+        </p>
+        <p>使用GO分割，删除多个列时，可以使用相同的参数名称。
+        <pre>GO</pre>
+        </p>
 </body>
 
 </html>
