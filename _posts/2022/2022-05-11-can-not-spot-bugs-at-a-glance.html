@@ -18,7 +18,7 @@ title: 不能一眼看出Bug
         <p>一个故事讲的是一个工程师可以通过听声音辨别出机器的故障，并轻而易举的修复，显得神乎其神。在实际的生活中，通常这种情况是这个工程师遇到过很多次这种情况，并解决过这个问题。</p>
         <p>有些很有经验的程序，盲目的自信，相信自己可以仅通过阅读代码进行静态分析，就可以看出软件中的bug。很多时候的确也是可以做到的，有些时候就翻车了，成了众人眼中的笑话。</p>
         <p>如果软件中出现了一个问题，自己通过阅读代码并没有看出软件会有什么bug。这个时候不要盲目的自信自己的代码一定没有任何问题，而是要通过实际的运行软件和调试，定位bug，因为软件中的bug不是凭空产生的，核对事实，更能有效的解决问题。</p>
-        <p><a href="https://github.com/yinyongxian/DeletedRowInaccessibleExceptionDemo">代码</a></p>
+        <p><a href="https://github.com/yinyongxian/YYX.DeletedRowInaccessibleExceptionDemo">代码</a></p>
         <p>比如在这个示例代码中，我开始没有想到DataTable.Select()会过滤掉DataTable.Rows中RowState为DataRowState.Deleted的行。当时看重构的代码应该不会产生任何影响，直到这个问题多次出现时，才去实际测试软件，看看到底是哪里出了问题。按理说在调用DataRow.Delete()方法后，应该调用DataTable.AcceptChanges()更新数据，可实际的代码中很多时候没有调用，软件的正常执行完全是巧合，不是按照预期。</p>
 
 </body>
