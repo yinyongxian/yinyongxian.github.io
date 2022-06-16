@@ -1,0 +1,28 @@
+---
+layout: default
+title: Git no checkoutclone Issue
+---
+
+<!doctype html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <title>Git no checkoutclone Issue</title>
+        <link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/Media/style/css/bootstrap502.min.css" type="text/css">
+</head>
+
+<body>
+        <h1>Git no checkoutclone Issue</h1>
+        <p>在用TortoiseGit下载代码的时候，遇到不能下载的问题:
+        <pre>unknown option: --no-checkoutclone</pre>
+        </p>
+        <p>可以通过修改生成的命令行，在Git Bash Here执行解决
+        <pre>git.exe --no-checkoutclone --progress --branch dev -v --depth 1 "URL" "DirectoryPath"</pre>
+        </p>
+        <p>to<pre>git.exe clone --no-checkout --progress --branch dev -v --depth 1 "URL" "DirectoryPath"</pre>
+</p>
+</body>
+
+</html>
