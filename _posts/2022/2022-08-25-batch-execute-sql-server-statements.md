@@ -21,6 +21,4 @@ sqlcmd -S %dbhost% -U %dbuser% -P %dbpasswd% -d %dbName% -Q "sql"
 ECHO.
 ECHO Successed
 ::PAUSE
-
-@ECHO Done! 
 ```
