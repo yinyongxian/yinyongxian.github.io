@@ -18,17 +18,28 @@ title: WinDbg Preview
         <p>在没有Visual Studio时使用WinDbg进行调试。</p>
         <p>可以直接在MS Store上安装。</p>
         <p>无法下载时使用命令行安装</p>
-        <p><ol class="padding-left-4em">
+        <p>
+        <ol class="padding-left-4em">
                 <li>Open MS store website and search for WinDbg</li>
                 <a href="https://apps.microsoft.com/store/apps">https://apps.microsoft.com/store/apps</a>
-                <li>Copy url and paste it in <a href="https://store.rg-adguard.net/" target="_blank">https://store.rg-adguard.net/</a> and you will get the link to download appx file</li>
-                <pre>https://apps.microsoft.com/store/detail/windbg-preview/9PGJGD53TN86?hl=zh-cn&gl=cn&rtc=1</pre>
+                <li>Copy url and paste it in <a href="https://store.rg-adguard.net/"
+                                target="_blank">https://store.rg-adguard.net/</a> and you will get the link to download
+                        appx file
+                        <pre>https://apps.microsoft.com/store/detail/windbg-preview/9PGJGD53TN86?hl=zh-cn&gl=cn&rtc=1</pre>
+                </li>
+
                 <li>创建目录C:\debug</li>
-                <li><pre>C:\WINDOWS\system32>Invoke-WebRequest ‘paste url here’ -OutFile "C:\debug\windbg.appx"</pre></li>
-                <pre>Invoke-WebRequest 'http://tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/4c032be9-8e5e-490e-9d84-3eb4392501ad?P1=1676013430&P2=404&P3=2&P4=VTe6xBI%2f19MIEc0e8iVDgPRcmIljC%2b2ACwt7UMC614nPuRY8CJSY42m9mtW7WOPPwGMbdrc59%2bQqe4QTgshxkA%3d%3d' -OutFile “C:\debug\windbg.appx”</pre>
-                <li><pre>C:\WINDOWS\system32>Add-AppxPackage -Path C:\debug\windbg.appx</pre></li>
+                <li>命令行
+                        <pre>C:\WINDOWS\system32>Invoke-WebRequest ‘paste url here’ -OutFile "C:\debug\windbg.appx"</pre>
+                        <pre>Invoke-WebRequest 'http://tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/4c032be9-8e5e-490e-9d84-3eb4392501ad?P1=1676013430&P2=404&P3=2&P4=VTe6xBI%2f19MIEc0e8iVDgPRcmIljC%2b2ACwt7UMC614nPuRY8CJSY42m9mtW7WOPPwGMbdrc59%2bQqe4QTgshxkA%3d%3d' -OutFile “C:\debug\windbg.appx”</pre>
+                </li>
+
+                <li>命令行
+                        <pre>C:\WINDOWS\system32>Add-AppxPackage -Path C:\debug\windbg.appx</pre>
+                </li>
                 <li>删除C:\debug</li>
-        </ol></p>
+        </ol>
+        </p>
         <p>可以使用了。</p>
 </body>
 
