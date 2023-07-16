@@ -16,7 +16,7 @@ title: 清流泉
   <link href="Media/style/main.css" rel="stylesheet" type="text/css" />
   <link href="Media/style/index.css" rel="stylesheet" type="text/css" />
   <script src="Media/style/js/simple-jekyll-search.min"></script>
-  <script>
+
     SimpleJekyllSearch({
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('results-container'),
@@ -26,19 +26,18 @@ title: 清流泉
         limit: 20, // 返回最大文章数
         fuzzy: false // 是否模糊匹配
       })
-  </script>
 
 </head>
 
 <body>
+
+    <div id="search-container">
+      <input type="text" id="search-input" placeholder="search...">
+      <ul id="results-container"></ul>
+    </div>
+
   <h1 style="text-align:center;">清流泉</h1>
   <br />
-
-  <div id="search-container">
-    <input type="text" id="search-input" placeholder="search...">
-    <ul id="results-container"></ul>
-  </div>
-
   <div id="table">
     <table style="table-layout: fixed;">
       <tbody>
