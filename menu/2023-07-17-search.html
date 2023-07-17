@@ -1,0 +1,34 @@
+---
+layout: default
+title: Search
+---
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <link href="/Media/style/main.css" rel="stylesheet" type="text/css">
+    <script src="/Media/style/js/simple-jekyll-search.min"></script>
+    <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+    <script type="text/javascript">
+        SimpleJekyllSearch({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            json: '/search.json',
+            searchResultTemplate: '<li><a href="{{ site.url }}{url}">{title}</a></li>'
+        })
+    </script>
+</head>
+
+<body>
+    <h1">Search</h1>
+    <p>
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="search...">
+            <ul id="results-container"></ul>
+        </div>
+    </p>
+</body>
+
+</html>
