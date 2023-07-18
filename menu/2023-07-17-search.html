@@ -10,12 +10,11 @@ title: Search
     <title>Search</title>
     <link href="/Media/style/main.css" rel="stylesheet" type="text/css">
     <script src="/Media/style/js/simple-jekyll-search.min"></script>
-    <script src="/Media/style/search.json"></script>
     <script type="text/javascript">
         SimpleJekyllSearch({
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
-            json: '/Media/style/search.json',
+            json: '{{ site.baseurl }}/search.json',
             searchResultTemplate: '<li><a href="{{ site.url }}{url}">{title}</a></li>'
         })
     </script>
