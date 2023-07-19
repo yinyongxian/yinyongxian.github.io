@@ -12,10 +12,16 @@ title: Search
     <script type="text/javascript">
         // window.
     </script>
+    <style>
+        .li-post {
+            list-style-type: none;
+        }
+    </style>
 </head>
 
 <body>
-    <h1">Search</h1>
+    <h1>Search</h1>
+    <br>
     <p>
         <div id="search-container" class="padding-left-4em">
             <input type="text" id="search-input" placeholder="search...">
@@ -29,7 +35,7 @@ title: Search
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             json: '{{ site.baseurl }}/search.json',
-            searchResultTemplate: '<li><a href="{{ site.url }}{url}">{title}</a></li>'
+            searchResultTemplate: '<li class="li-post"><a href="{{ site.url }}{url}">{title}</a></li>'
         })
     </script>
 </body>
