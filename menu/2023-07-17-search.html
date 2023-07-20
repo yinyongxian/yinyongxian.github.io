@@ -40,7 +40,7 @@ title: Search
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             json: '{{ site.baseurl }}/search.json',
-            searchResultTemplate: '<li class="li-post"><a href="{{ site.url }}{url}">{title}</a>&nbsp&nbsp&nbsp&nbsp<span id="post-time">{ post.date | date: "%F" }</span></li>'
+            searchResultTemplate: '<li class="li-post"><a href="{{ site.url }}{url}">{title}</a>&nbsp&nbsp&nbsp&nbsp<span id="post-time">{ date | date: "%F" }</span></li>'
         })
     </script>
 </body>
