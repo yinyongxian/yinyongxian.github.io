@@ -83,6 +83,7 @@ a:visited {
 
 a {
 	color: #0070c9;
+	white-space: normal;
 }
 
 a:hover {
