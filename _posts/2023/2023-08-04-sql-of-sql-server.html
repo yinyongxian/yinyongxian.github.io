@@ -26,7 +26,8 @@ where col.name ='ColumnName'
 --Fuzzy query table name
 select  name as TableName
 from sys.tables
-where name like '%JOBEXT%'</pre>
+where name like '%JOBEXT%
+order by name'</pre>
     </p>
     <h2>整表导入新表备份和还原</h2>
     <p>要插入的表不能已存在。
