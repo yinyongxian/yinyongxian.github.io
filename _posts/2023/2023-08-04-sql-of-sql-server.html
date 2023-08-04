@@ -24,10 +24,9 @@ on col.id= tab.object_id
 where col.name ='ColumnName'
 
 --Fuzzy query table name
-select distinct tab.name as TableName
-from syscolumns col left join sys.tables  tab 
-on col.id= tab.object_id 
-where tab.name like '%TableName%'</pre>
+select  name as TableName
+from sys.tables
+where name like '%JOBEXT%'</pre>
     </p>
     <h2>整表导入新表备份和还原</h2>
     <p>要插入的表不能已存在。
