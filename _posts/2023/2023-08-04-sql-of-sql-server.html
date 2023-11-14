@@ -15,6 +15,14 @@ title: SQL Of SqlServer
 <body>
     <h1>SQL Of SqlServer</h1>
     <p>记录一些常用的sql语句。</p>
+    <h2>Default Database</h2>
+    <p>设置登录SQL Server时默认的数据库，减少不必要切换：默认数据库 --> 想要的数据库。
+    <pre>DECLARE @loginText nvarchar(256)
+SELECT @loginText = SUSER_NAME()
+EXEC sp_defaultdb @loginame = @loginText , @defdb = 'DatabaseName'</pre>
+    </p>
+    <p>如果设置不成功，请用一个 SQL Server Authentication 账号设置。</p>
+
     <h2>查询指定列的所有表名</h2>
     <p>
     <pre>--Query table by column
@@ -73,7 +81,9 @@ END</pre>
     <pre>ROW_NUMBER() OVER(ORDER BY (SELECT NULL))</pre>
     </p>
     <h2>查看存储过程</h2>
-    <p><pre>sp_helptext</pre></p>
+    <p>
+    <pre>sp_helptext</pre>
+    </p>
     <h2>游标</h2>
     <p>游标就是foreach，由SQL这种低级脚本语言编写非常繁琐，浪费了无数人的时间，掉了好多头发。站在现在的角度，当初设计SQL的人就像小丑一样造了一个这么难用的破玩意儿。</p>
 
