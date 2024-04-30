@@ -14,13 +14,17 @@ title: 管理员启动 Visual Studio
 
 <body>
         <h1>管理员启动 Visual Studio</h1>
-        <h2>修改快捷方式</h2>
+        <h2>快捷方式</h2>
         <p>桌面、开始菜单、任务栏、文件管理器等都要都要逐个修改快捷方式。</p>
-        <p><img src="https://raw.githubusercontent.com/yinyongxian/github-pages-media/main/images/run-as-admin.png" alt="Run as admin" title="Run as admin"><p>
-        <h2>双击 *.sln</h2>
-        <p></p>
-        <h2>拖入 *.sln 到 Visual Studio</h2>
-        <p></p>
+        <p><img src="https://raw.githubusercontent.com/yinyongxian/github-pages-media/main/images/2024/20240430/run-as-admin.png" alt="Run as admin" title="Run as admin"><p>
+        <h2>双击 *.sln 文件</h2>
+        <p>需要修改注册表来实现管理员启动。</p>
+        <p><img src="https://raw.githubusercontent.com/yinyongxian/github-pages-media/main/images/2024/20240430/devenv-run-as-admin.png" alt=""></p>
+        <p><pre>Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers</pre></p>
+        <p><pre>~ RUNASADMIN</pre></p>
+        <h2>拖入 *.sln 文件到 Visual Studio</h2>
+        <p>需要对文件devenv.exe为用户设置足够的权限。</p>
+        <p><img src="https://raw.githubusercontent.com/yinyongxian/github-pages-media/main/images/2024/20240430/full-control.png" "alt=""></p>
 </body>
 
 </html>
