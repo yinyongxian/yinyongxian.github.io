@@ -7,6 +7,9 @@ title: 落雪音乐
 
 电脑2.7.0以后，手机1.3.0以后版本 支持的音源
 
+## 软件
+[https://github.com/lyswhut/lx-music-desktop](https://github.com/lyswhut/lx-music-desktop)
+
 ## 在线导入音乐源
 
 野花： [https://liuyang-public.oss-cn-beijing.aliyuncs.com/flower-v1.0.0.js ](https://liuyang-public.oss-cn-beijing.aliyuncs.com/flower-v1.0.0.js)  
