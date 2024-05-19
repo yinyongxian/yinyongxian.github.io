@@ -11,7 +11,7 @@ title: 落雪音乐
 
 野花： [https://liuyang-public.oss-cn-beijing.aliyuncs.com/flower-v1.0.0.js ](https://liuyang-public.oss-cn-beijing.aliyuncs.com/flower-v1.0.0.js)  
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[https://raw.githubusercontent.com/OneCodeMonkey/music-sources/master/js/flower-v1.0.0.js ](https://raw.githubusercontent.com/OneCodeMonkey/music-sources/master/js/flower-v1.0.0.js) 
+[https://raw.githubusercontent.com/OneCodeMonkey/music-sources/master/js/flower-v1.0.0.js ](https://raw.githubusercontent.com/OneCodeMonkey/music-sources/master/js/flower-v1.0.0.js) 
 
 Huibq源：https://raw.niuma666bet.buzz/Huibq/keep-alive/master/lxmusicapi.js
 
