@@ -1,6 +1,6 @@
 ---
 layout: default
-title: # 浅谈文理分科
+title: 浅谈文理分科
 ---
 
 # 浅谈文理分科
