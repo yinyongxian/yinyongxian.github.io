@@ -13,6 +13,6 @@ title: 忘喝的药
 
 <div class="datenote">
 <span>尹永贤</span><br>
-<span>2024-12-25</span>
-<span>上海</span><br>
+<span>2024-12-25</span><br>
+<span>上海</span>
 <div>
