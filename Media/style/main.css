@@ -241,3 +241,10 @@ tr {
 	display: none;
 }
 
+#img-normal {
+	width: 800px;
+}
+
+#img-wider {
+	width: 1080px;
+}
