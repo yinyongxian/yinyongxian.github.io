@@ -12,8 +12,8 @@ title: 简阅配置
 
 隐藏一些不想看到的内容，看起来简洁美观。
 
-{% highlight css %}
 ```css
+{% highlight css %}
 sr-rd-desc {
   display: none;
 }
@@ -25,8 +25,8 @@ sr-rd-footer {
 .simpread-theme-root {
   background-color: black !important;
 }
-```
 {% endhighlight %}
+```
 
 ## 导出图片
 
