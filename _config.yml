@@ -3,4 +3,4 @@ paginate: 50
 paginate_path: "page:num"
 markdown: kramdown
 kramdown:
-  syntax_highlighter_opts: roughs
+  syntax_highlighter: rouge
