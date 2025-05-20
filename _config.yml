@@ -1,4 +1,5 @@
-theme: jekyll-theme-cayman
+theme: minima
 paginate: 50
 paginate_path: "page:num"
 markdown: kramdown
+highlighter: rouge
