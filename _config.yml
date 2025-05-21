@@ -1,4 +1,4 @@
-theme: minima
+theme: jekyll-theme-cayman
 paginate: 50
 paginate_path: "page:num"
 
