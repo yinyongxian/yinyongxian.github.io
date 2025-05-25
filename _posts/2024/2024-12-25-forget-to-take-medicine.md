@@ -12,7 +12,7 @@ title: 忘喝的药
 自从感染过新冠肺炎之后，好像每年的冬天都特别容易感染风寒，原因不明，坑爹啊！
 
 <div class="datenote">
-<span>尹永贤</span><br>
-<span>2024-12-25</span><br>
-<span>上海</span>
+    <span>尹永贤</span><br>
+    <span>2024-12-25</span><br>
+    <span>上海</span>
 </div>
