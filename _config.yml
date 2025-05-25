@@ -1,9 +1,3 @@
-theme: minima
+theme: jekyll-theme-cayman
 paginate: 50
 paginate_path: "page:num"
-
-markdown: kramdown
-highlighter: rouge
-
-kramdown:
-  syntax_highlighter: rouge
