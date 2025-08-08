@@ -9,7 +9,7 @@ title: 添加 Open with Code Insiders
 
 ## file: Open with Code Insiders.reg
 
-```reg
+```shell
 Windows Registry Editor Version 5.00
 
 ; 添加到文件夹背景右键菜单
