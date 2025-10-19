@@ -10,6 +10,8 @@ title: 世界不值一顾
 资深的蠢货遍地都是. 
 
 别用你的愚蠢刁难我。
+ 
+老子根本就不屑一顾。
 
 <div class="datenote">
     <span>尹永贤</span><br>
