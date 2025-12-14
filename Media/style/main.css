@@ -185,6 +185,10 @@ tr {
 	margin: 0px 10px;
 }
 
+.padding-left-2em {
+	padding-left: 2em;
+}
+
 .padding-left-4em {
 	padding-left: 4em;
 }
