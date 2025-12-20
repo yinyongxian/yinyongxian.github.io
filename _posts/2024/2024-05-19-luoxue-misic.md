@@ -18,4 +18,4 @@ Huibq_lxmusic源： [https://raw.githubusercontent.com/BlueSeagull-CHN/lx-music-
 野花： [https://raw.githubusercontent.com/BlueSeagull-CHN/lx-music-source/main/flower/latest.js](https://raw.githubusercontent.com/BlueSeagull-CHN/lx-music-source/main/flower/latest.js)  
 洛雪科技： [https://raw.githubusercontent.com/BlueSeagull-CHN/lx-music-source/main/lx/latest.js](https://raw.githubusercontent.com/BlueSeagull-CHN/lx-music-source/main/lx/latest.js)  
 ikun音源： [https://api.ikunshare.com/script](https://api.ikunshare.com/script)  
-freelisten：[https://a.dongs.v6.rocks:7777/d/public/freeVIP/lx-music/musicsource_freelisten_v1.1.1.js](https://a.dongs.v6.rocks:7777/d/public/freeVIP/lx-music/musicsource_freelisten_v1.1.1.js)  
+freelisten：[https://a.dongs.v6.rocks:7777/d/public/freeVIP/lx-music/musicsource_freelisten_v1.1.1.js](https://a.dongs.v6.rocks:7777/d/public/freeVIP/lx-music/musicsource_freelisten_v1.1.1.js)
