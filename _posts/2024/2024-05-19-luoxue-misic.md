@@ -22,6 +22,6 @@ Huibq_lxmusic源： [https://raw.githubusercontent.com/BlueSeagull-CHN/lx-music-
 
 洛雪科技： [https://raw.githubusercontent.com/BlueSeagull-CHN/lx-music-source/main/lx/latest.js](https://raw.githubusercontent.com/BlueSeagull-CHN/lx-music-source/main/lx/latest.js)  
 
-ikun音源： [https://api.ikunshare.com/script](https://api.ikunshare.com/script)  
+ikun音源： [https://api.ikunshare.com/script/lxmusic](https://api.ikunshare.com/script/lxmusic)  
 
 freelisten：[https://a.dongs.v6.rocks:7777/d/public/freeVIP/lx-music/musicsource_freelisten_v1.1.1.js](https://a.dongs.v6.rocks:7777/d/public/freeVIP/lx-music/musicsource_freelisten_v1.1.1.js)
