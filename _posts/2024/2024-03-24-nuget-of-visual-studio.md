@@ -11,7 +11,7 @@ title: Nuget of Visual Studio
   
 ```text
 Tools > Options > NuGet Package Manager > Package Source
-```
+```  
   
 ```text
 https://api.nuget.org/v3/index.json
