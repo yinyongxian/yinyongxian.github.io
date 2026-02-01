@@ -5,7 +5,7 @@ title: 诺丁汉中文学校
 
 # 诺丁汉中文学校
 
-[诺丁汉中文学校](https://www.nottinghamchineseschool.com/)
+[诺丁汉中文学校](https://www.chinese-school.org.uk/)
 
 <div class="datenote">
     <span>尹永贤</span><br>
