@@ -35,7 +35,40 @@ where col.name ='ColumnName'
 select  name as TableName
 from sys.tables
 where name like '%JOBEXT%
-order by name'</pre>
+order by name'
+
+-- Select column
+SELECT distinct * FROM (
+select distinct 'Table' Source, t.name as TableName, c.name as FieldName, c.length, 'SELECT ' + UPPER(c.name) + ', *
+FROM schema.' + UPPER(t.name) query
+from syscolumns c left join sys.tables t
+on c.id= t.object_id
+
+union all
+
+select distinct 'View' Source, v.name as TableName, c.name as FieldName, c.length, 'SELECT ' + UPPER(c.name) + ', * FROM
+schema.' + UPPER(v.name) query
+from syscolumns c left join sys.views v
+on c.id= v.object_id
+) tab
+where tab.FieldName Like '%FieldName' and tab.TableName is not null
+
+-- Select column with in a specific table
+SELECT distinct * FROM (
+select distinct 'Table' Source, t.name as TableName, c.name as FieldName, c.length, 'SELECT ' + UPPER(c.name) + ', *
+FROM schema.' + UPPER(t.name) query
+from syscolumns c left join sys.tables t
+on c.id= t.object_id
+
+union all
+
+select distinct 'View' Source, v.name as TableName, c.name as FieldName, c.length, 'SELECT ' + UPPER(c.name) + ', * FROM
+schema.' + UPPER(v.name) query
+from syscolumns c left join sys.views v
+on c.id= v.object_id
+) tab
+where tab.FieldName Like '%FieldName%' and tab.TableName like '%TableName%'
+</pre>
     </p>
     <h2>整表导入新表备份和还原</h2>
     <p>要插入的表不能已存在。
