@@ -5,7 +5,7 @@ title: 来钱论
 
 # 来钱论
 
-[金钱回收机制]({{ site.baseurl }}/_posts/books/on_making_money/2026-04-26-on-making-money.html)  
+[金钱回收机制]({{ site.baseurl }}/_posts/books/on_making_money/2026-05-01-0.html)  
 [一年定期存款利率3%](https://)  
 [](https://)  
 [](https://)  
