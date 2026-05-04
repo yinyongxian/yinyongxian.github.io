@@ -3,6 +3,12 @@ layout: default
 title: 来钱论
 ---
 
+<style>
+p:has(a:only-child) {
+  text-indent: 0;
+}
+</style>
+
 # 来钱论
 
 &#8203;[金钱回收机制](/books/on_making_money/0)  
