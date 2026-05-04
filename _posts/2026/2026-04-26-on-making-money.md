@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 来钱论
+title: 《来钱论》
 ---
 
 <style>
@@ -11,9 +11,9 @@ ul {
 }
 </style>
 
-# 来钱论
+# 《来钱论》
 
-- [金钱回收机制](/books/on_making_money/0)  
+- [金钱回收机制](/books/on_making_money/money-recycling-mechanism)  
 - [一年定期存款利率3%](https://)  
 - [](https://)  
 - [](https://)  
