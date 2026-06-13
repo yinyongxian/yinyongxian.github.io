@@ -6,13 +6,18 @@ title: 世界不值一顾
 # 世界不值一顾
 
 <div align="center">
-
 煞笔的世界糟糕至极。
-
+</div>
+  
+<div align="center">
 资深的蠢货遍地都是。
-
+</div>
+  
+<div align="center">
 莫用你的愚蠢刁难我。
- 
+ </div>
+  
+<div align="center">
 老子根本就不屑一顾。
 </div>
 
