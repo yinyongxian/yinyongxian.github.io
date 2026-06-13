@@ -5,13 +5,16 @@ title: 世界不值一顾
 
 # 世界不值一顾
 
+<div align="center">
+
 煞笔的世界糟糕至极。
- 
+
 资深的蠢货遍地都是。
 
 莫用你的愚蠢刁难我。
  
 老子根本就不屑一顾。
+</div>
 
 <div class="datenote">
     <span>尹永贤</span><br>
