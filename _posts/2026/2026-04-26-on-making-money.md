@@ -15,7 +15,7 @@ ul {
 
 - [金钱回收机制](/books/on_making_money/money-recycling-mechanism)  
 - [一年定期存款利率3%](https://)  
-- [论美国加征关税和中国人失业的关系](/books/on_making_money/increase-tariffs.md)  
+- [论美国加征关税和中国人失业的关系](/books/on_making_money/increase-tariffs)  
 - [](https://)  
 - [](https://)  
 - [](https://)  
